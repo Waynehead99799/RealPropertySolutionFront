@@ -6,6 +6,7 @@ import { PropertyBox } from "@components/property/propertyBox";
 import { GALLERY, PROPERTY_DATA } from "src/libs/constants";
 import { PropertyGallery } from "@components/property/propertyGallery";
 import { Testimonials } from "@components/home/testimonials";
+import { PropertyStatus } from "@components/home/propertyStatus";
 
 export const HomeScene = () => {
     return (
@@ -98,6 +99,7 @@ export const HomeScene = () => {
                     <PropertyGallery data={GALLERY} />
                 </div>
             </section>
+            <PropertyStatus />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-20">
                 <h2 className="text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Testimonials

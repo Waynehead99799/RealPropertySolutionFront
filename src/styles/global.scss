@@ -75,3 +75,9 @@ body {
 .swiper-pagination-bullet-active {
   background: $primary !important;
 }
+
+.property-status-bg {
+  background-image: url('/images/pic-9.jpg');
+  background-color:rgb(0 0 0 / 60%);
+  background-blend-mode: multiply;
+}
