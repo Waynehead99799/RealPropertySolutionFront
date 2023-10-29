@@ -92,7 +92,7 @@ export const PropertyStatus = () => {
         >
             <div className="container mx-auto px-6 lg:px-10 2xl:px-32 py-14">
                 <div className="flex flex-col text-center w-full mb-10">
-                    <h2 className="text-4xl tracking-tight font-semibold text-center text-white">
+                    <h2 className="text-3xl md:text-4xl tracking-tight font-semibold text-center text-white">
                         We are Trusted Property Dealer in Ahmedabad
                     </h2>
                     <p className="text-center mt-3 md:w-2/3 mx-auto text-white">
@@ -108,7 +108,7 @@ export const PropertyStatus = () => {
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                         <div className="px-4 py-6 rounded-lg bg-white">
                             <CommercialIcon className="w-[50px] h-[50px] mx-auto mb-3" />
-                            <h2 className="title-font font-medium text-4xl">
+                            <h2 className="title-font font-medium  text-3xl md:text-4xl">
                                 {commercial}+
                             </h2>
                             <p className="text-lg font-medium">
@@ -119,7 +119,7 @@ export const PropertyStatus = () => {
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                         <div className="px-4 py-6 rounded-lg bg-white">
                             <ResidentialIcon className="w-[50px] h-[50px] mx-auto mb-3" />
-                            <h2 className="title-font font-medium text-4xl">
+                            <h2 className="title-font font-medium  text-3xl md:text-4xl">
                                 {residential}+
                             </h2>
                             <p className="text-lg font-medium">
@@ -130,7 +130,7 @@ export const PropertyStatus = () => {
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                         <div className="px-4 py-6 rounded-lg bg-white">
                             <LandIcon className="w-[50px] h-[50px] mx-auto mb-3" />
-                            <h2 className="title-font font-medium text-4xl ">
+                            <h2 className="title-font font-medium  text-3xl md:text-4xl ">
                                 {land}
                             </h2>
                             <p className="text-lg font-medium">Land</p>
@@ -139,7 +139,7 @@ export const PropertyStatus = () => {
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
                         <div className="px-4 py-6 rounded-lg bg-white">
                             <LocationsIcon className="w-[50px] h-[50px] mx-auto mb-3" />
-                            <h2 className="title-font font-medium text-4xl ">
+                            <h2 className="title-font font-medium  text-3xl md:text-4xl ">
                                 {locations}
                             </h2>
                             <p className="text-lg font-medium">Locations</p>

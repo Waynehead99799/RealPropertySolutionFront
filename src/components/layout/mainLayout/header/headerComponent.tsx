@@ -46,7 +46,7 @@ export const Header = () => {
                 <div className="backdrop-blur-md inset-x-0 bottom-[-50%] top-[-1px] absolute"></div>
                 <nav className="relative">
                     <div className="container mx-auto px-6 lg:px-10 2xl:px-32 flex items-center justify-between py-2">
-                        <Link href="#">
+                        <Link href="/">
                             <Image
                                 src="/logo.svg"
                                 width={153}
@@ -75,9 +75,11 @@ export const Header = () => {
                                             key={menu.label}
                                             className="cursor-pointer hover:bg-primary/[0.18] px-3 py-1 h-fit hover:rounded-md"
                                         >
-                                            <span className="font-medium text-base">
-                                                {menu.label}
-                                            </span>
+                                            <Link href={menu.url}>
+                                                <span className="font-medium text-base">
+                                                    {menu.label}
+                                                </span>
+                                            </Link>
                                         </li>
                                     );
                                 })}
@@ -150,16 +152,20 @@ export const Header = () => {
                                                             key={menu.label}
                                                             className="cursor-pointer hover:bg-primary/[0.18] px-4 py-2 border-b border-black/5"
                                                         >
-                                                            <span
-                                                                onClick={() => {
-                                                                    setCollapsed(
-                                                                        false,
-                                                                    );
-                                                                }}
-                                                                className="font-normal text-sm"
+                                                            <Link
+                                                                href={menu.url}
                                                             >
-                                                                {menu.label}
-                                                            </span>
+                                                                <span
+                                                                    onClick={() => {
+                                                                        setCollapsed(
+                                                                            false,
+                                                                        );
+                                                                    }}
+                                                                    className="font-normal text-sm"
+                                                                >
+                                                                    {menu.label}
+                                                                </span>
+                                                            </Link>
                                                         </li>
                                                     );
                                                 })}

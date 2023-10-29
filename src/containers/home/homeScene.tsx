@@ -42,7 +42,7 @@ export const HomeScene = () => {
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32">
                 <div className="gap-16 items-center py-8 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16">
                     <div className="font-light text-gray-500 sm:text-lg">
-                        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">
+                        <h2 className="mb-4  text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">
                             Lorem Ipsum is dummy
                         </h2>
                         <p className="mb-4">
@@ -75,7 +75,7 @@ export const HomeScene = () => {
                 </div>
             </section>
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5">
-                <h2 className="text-4xl tracking-tight font-extrabold text-center text-gray-900">
+                <h2 className=" text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Properties
                 </h2>
                 <p className="mb-10 text-center mt-3 md:w-1/2 mx-auto">
@@ -88,7 +88,7 @@ export const HomeScene = () => {
                 </div>
             </section>
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-14">
-                <h2 className="text-4xl tracking-tight font-extrabold text-center text-gray-900">
+                <h2 className=" text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Properties Gallery
                 </h2>
                 <p className="mb-10 text-center mt-3 md:w-1/2 mx-auto">
@@ -102,7 +102,7 @@ export const HomeScene = () => {
             </section>
             <PropertyStatus />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-20">
-                <h2 className="text-4xl tracking-tight font-extrabold text-center text-gray-900">
+                <h2 className=" text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Testimonials
                 </h2>
                 <div className="mt-10">

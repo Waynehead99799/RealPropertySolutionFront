@@ -1,13 +1,13 @@
 import * as Yup from "yup";
 
-export interface HomeFormInputs {
+export interface ContactFormInputs {
     name: string;
     email: string;
     phone: string;
     msg: string;
 }
 
-export const HomeFormValidateSchema = Yup.object({
+export const ContactFormValidateSchema = Yup.object({
     name: Yup.string()
         .required("Name is a required field")
         .matches(/^\s*\S[\s\S]*$/, "name cannot contain only blankspaces"),

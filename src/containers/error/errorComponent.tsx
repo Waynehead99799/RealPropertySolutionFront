@@ -23,7 +23,7 @@ const ErrorComponent = (props: ErrorComponentProps) => {
                 className={`box-border m-auto lg:w-2/3 py-12 lg:px-56 h-auto rounded-lg mx-auto my-28 ${errorStyles.container}`}
             >
                 <div>
-                    <h2 className="text-center text-5xl font-bold text-primary mb-3">
+                    <h2 className="text-center  text-3xl md:text-4xl font-bold text-primary mb-3">
                         Whoops!
                     </h2>
                     <p className="text-center text-base font-medium">

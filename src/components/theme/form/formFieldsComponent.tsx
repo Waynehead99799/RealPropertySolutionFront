@@ -349,7 +349,7 @@ export const InputRadioField = (props: InputRadioFieldProps) => {
                 </label>
             </div>
             {showError && error && (
-                <span className="ant-typography ant-typography-danger block">
+                <span className="ant-typography ant-typography-danger block text-xs">
                     {error}
                 </span>
             )}
@@ -461,7 +461,7 @@ export const InputField = (props: InputFieldProps) => {
                 )}
             </div>
             {showError && error && (
-                <span className="ant-typography ant-typography-danger block mt-1">
+                <span className="ant-typography ant-typography-danger block mt-1 text-xs">
                     {error}
                 </span>
             )}
@@ -546,7 +546,7 @@ export const CheckBoxField = (props: CheckBoxFieldProps) => {
                 )}
             </div>
             {showError && error && (
-                <span className="ant-typography ant-typography-danger block mt-1">
+                <span className="ant-typography ant-typography-danger block mt-1 text-xs">
                     {error}
                 </span>
             )}
@@ -634,7 +634,7 @@ export const AddonAfterBeforeInputField = (props: InputFieldProps) => {
                 )}
             </div>
             {showError && error && (
-                <span className="ant-typography ant-typography-danger block mt-1">
+                <span className="ant-typography ant-typography-danger block mt-1 text-xs">
                     {error}
                 </span>
             )}
@@ -773,7 +773,7 @@ export const InputDateField = (props: InputDateFieldProps) => {
                     )}
                 />
                 {showError && error && (
-                    <span className="ant-typography ant-typography-danger block">
+                    <span className="ant-typography ant-typography-danger block text-xs">
                         {error}
                     </span>
                 )}
@@ -867,7 +867,7 @@ export const InputPasswordField = (props: InputFieldProps) => {
                 </span>
             </div>
             {showError && error && (
-                <span className="ant-typography ant-typography-danger block mt-1">
+                <span className="ant-typography ant-typography-danger block mt-1 text-xs">
                     {error}
                 </span>
             )}
@@ -945,7 +945,7 @@ export const TextAreaField = (props: TextAreaFieldProps) => {
                     }}
                 />
                 {showError && error && (
-                    <span className="ant-typography ant-typography-danger block">
+                    <span className="ant-typography ant-typography-danger block text-xs">
                         {error}
                     </span>
                 )}
@@ -1037,7 +1037,7 @@ export const SelectField = (props: SelectFieldProps) => {
                     )}
                 />
                 {showError && error && (
-                    <span className="ant-typography ant-typography-danger block">
+                    <span className="ant-typography ant-typography-danger block text-xs">
                         {error}
                     </span>
                 )}
@@ -1108,7 +1108,7 @@ export const InputAfterField = (props: InputAfterFieldProps) => {
                     )}
                 />
                 {showError && error && (
-                    <span className="ant-typography ant-typography-danger block">
+                    <span className="ant-typography ant-typography-danger block text-xs">
                         {error}
                     </span>
                 )}
@@ -1201,7 +1201,7 @@ export const InputReactSelectFieldAsync = (props: ReactAsyncSelectProps) => {
                     )}
                 />
                 {showError && error && (
-                    <span className="ant-typography ant-typography-danger block">
+                    <span className="ant-typography ant-typography-danger block text-xs">
                         {error}
                     </span>
                 )}

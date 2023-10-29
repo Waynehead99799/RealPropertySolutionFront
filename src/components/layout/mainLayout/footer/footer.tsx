@@ -31,22 +31,7 @@ export const Footer = () => {
 
     return (
         <>
-            {/* <section className="border-b border-t py-7 border-white/10">
-                <div className="md:flex block items-center md:text-left text-center">
-                    <div className="lg:w-2/4 md:w-3/5 ">
-                        <h2 className="lg:text-[30px] text-2xl font-bold md:!leading-[48px] leading-10">
-                            We&#39;ve prepared everything, it&#39;s time for you
-                            to tell the problem
-                        </h2>
-                    </div>
-                    <div className="ml-auto md:mt-0 mt-5">
-                        <button className="btn btn-primary p-3 lg:px-12 px-8">
-                            Send Quote
-                        </button>
-                    </div>
-                </div>
-            </section> */}
-            <footer className="pt-2 mt-20 bg-[#e8e6e6]/40">
+            <footer className="pt-2 bg-[#e8e6e6]/40">
                 <div className="rounded-[5px]">
                     <div className="text-center py-8">
                         <div className="flex items-center justify-center mb-10 md:mt-3">
