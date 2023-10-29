@@ -7,6 +7,7 @@ import { GALLERY, PROPERTY_DATA } from "src/libs/constants";
 import { PropertyGallery } from "@components/property/propertyGallery";
 import { Testimonials } from "@components/home/testimonials";
 import { PropertyStatus } from "@components/home/propertyStatus";
+import { ContactSection } from "@components/home/contact";
 
 export const HomeScene = () => {
     return (
@@ -108,6 +109,7 @@ export const HomeScene = () => {
                     <Testimonials />
                 </div>
             </section>
+            <ContactSection />
         </>
     );
 };
