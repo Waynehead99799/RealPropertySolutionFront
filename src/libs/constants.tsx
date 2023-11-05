@@ -95,3 +95,18 @@ export const GALLERY = [
     "/images/pic-8.jpg",
     "/images/pic-9.jpg",
 ];
+
+export const LOCATIONS = [
+    {
+        label: "Gandhinagar",
+        value: "gn",
+    },
+    {
+        label: "Surat",
+        value: "su",
+    },
+    {
+        label: "Mansha",
+        value: "ms",
+    },
+];

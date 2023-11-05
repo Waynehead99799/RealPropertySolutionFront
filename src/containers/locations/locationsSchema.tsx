@@ -5,10 +5,10 @@ import { PropertyBox } from "@components/property/propertyBox";
 import React from "react";
 import { PROPERTY_DATA } from "src/libs/constants";
 
-const CommercialSchema = ({ onSubmit }: any) => {
+const LocationsSchema = ({ onSubmit }: any) => {
     return (
         <>
-            <BannerSection title="Commercial" />
+            <BannerSection title="Locations" />
             <FilterForm onSubmit={onSubmit} />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5 mb-20">
                 <div className="grid gap-x-6 lg:grid-cols-3">
@@ -27,4 +27,4 @@ const CommercialSchema = ({ onSubmit }: any) => {
     );
 };
 
-export default CommercialSchema;
+export default LocationsSchema;

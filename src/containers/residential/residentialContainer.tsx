@@ -3,7 +3,11 @@ import React from "react";
 import ResidentialSchema from "./residentialSchema";
 
 export const ResidentialContainer = () => {
-    return <ResidentialSchema />;
+    const onSubmit = (values: any) => {
+        console.log(values);
+    };
+
+    return <ResidentialSchema onSubmit={onSubmit} />;
 };
 
 ResidentialContainer.Layout = MainLayoutComponent;

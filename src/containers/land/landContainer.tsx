@@ -3,7 +3,11 @@ import React from "react";
 import LandSchema from "./landSchema";
 
 export const LandContainer = () => {
-    return <LandSchema />;
+    const onSubmit = (values: any) => {
+        console.log(values);
+    };
+
+    return <LandSchema onSubmit={onSubmit} />;
 };
 
 LandContainer.Layout = MainLayoutComponent;

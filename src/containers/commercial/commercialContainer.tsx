@@ -3,7 +3,11 @@ import React from "react";
 import CommercialSchema from "./commercialSchema";
 
 export const CommercialContainer = () => {
-    return <CommercialSchema />;
+    const onSubmit = (values: any) => {
+        console.log(values);
+    };
+
+    return <CommercialSchema onSubmit={onSubmit} />;
 };
 
 CommercialContainer.Layout = MainLayoutComponent;
