@@ -22,15 +22,19 @@ export const PropertyBox = ({ data }: any) => {
                             data-te-ripple-color="light"
                         >
                             <img src={d.img} className="w-full" />
-                            <Link href="/">
+                            <Link href={`/property-detail/${d.id}`}>
                                 <div className="cursor-pointer mask absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100 bg-[hsla(0,0%,98.4%,0.2)]"></div>
                             </Link>
                         </div>
                         <span className="px-3 uppercase py-[2px] whitespace-nowrap rounded-full bg-primary/75 text-[11px] leading-none text-white">
                             {d.type}
                         </span>
-                        <h5 className="mb-2 text-xl font-bold mt-2 cursor-pointer hover:text-primary">
-                            {d.name}
+                        <h5 className="mb-2 text-xl font-bold mt-6">
+                            <Link href={`/property-detail/${d.id}`}>
+                                <a className="cursor-pointer hover:text-primary">
+                                    {d.name}
+                                </a>
+                            </Link>
                         </h5>
                         <div className="mb-3 flex items-center text-sm font-medium text-danger dark:text-danger-500 justify-start">
                             <LocationIcon className="mr-2" /> {d.address}
