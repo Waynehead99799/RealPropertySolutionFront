@@ -14,6 +14,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 1,
     },
     {
         name: "Lorem Ipsum is dummy",
@@ -28,6 +29,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 2,
     },
     {
         name: "Lorem Ipsum is dummy",
@@ -42,6 +44,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 7,
     },
     {
         name: "Lorem Ipsum is dummy",
@@ -56,6 +59,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 5,
     },
     {
         name: "Lorem Ipsum is dummy",
@@ -70,6 +74,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 4,
     },
     {
         name: "Lorem Ipsum is dummy",
@@ -84,6 +89,7 @@ export const PROPERTY_DATA = [
             levels: 15,
             sqft: 1200,
         },
+        id: 3,
     },
 ];
 
@@ -94,4 +100,19 @@ export const GALLERY = [
     "/images/pic-4.jpg",
     "/images/pic-8.jpg",
     "/images/pic-9.jpg",
+];
+
+export const LOCATIONS = [
+    {
+        label: "Gandhinagar",
+        value: "gn",
+    },
+    {
+        label: "Surat",
+        value: "su",
+    },
+    {
+        label: "Mansha",
+        value: "ms",
+    },
 ];
