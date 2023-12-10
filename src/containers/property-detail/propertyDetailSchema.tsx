@@ -29,13 +29,13 @@ const PropertyDetailSchema = () => {
             <BannerSection title="Lorem Ipsum is dummy" />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5 mb-20">
                 <div className="mb-16 flex flex-wrap lg:flex-row-reverse">
-                    <div className="mb-6 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-1/4 lg:pl-6">
+                    <div className="md:mb-6 md:mt-0 mt-10 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-1/4 lg:pl-6 order-2 md:order-1">
                         <div className="rounded-3xl border border-white-100/5 bg-white-200 p-6 text-center sticky top-[115px]">
                             <ContactForm />
                         </div>
                     </div>
 
-                    <div className="w-full shrink-0 grow-0 basis-auto lg:w-9/12 lg:pr-6">
+                    <div className="w-full shrink-0 grow-0 basis-auto lg:w-9/12 lg:pr-6 md:order-2 order-1">
                         <div className="mb-10">
                             <Swiper
                                 loop={true}
@@ -197,7 +197,7 @@ const PropertyDetailSchema = () => {
                             <h3 className="mb-4 text-2xl font-bold">
                                 Contact Details
                             </h3>
-                            <div className="flex items-center mb-3">
+                            <div className="flex md:items-center mb-3">
                                 <LocationIcon />
                                 <span className="ml-2 md:w-auto w-4/5">
                                     402, Dwarkesh business hub, opp. Home Town,
