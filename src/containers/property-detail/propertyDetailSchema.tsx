@@ -99,7 +99,7 @@ const PropertyDetailSchema = () => {
                                 className="mySwiper"
                             >
                                 <SwiperSlide>
-                                    <img src="/images/pic-1.jpg" />
+                                    <img src="/images/450928190O-1697202933925.jpg" />
                                 </SwiperSlide>
                                 <SwiperSlide>
                                     <img src="/images/pic-2.jpg" />
