@@ -96,12 +96,10 @@ export const PropertyStatus = () => {
                         We are Trusted Property Dealer in Ahmedabad
                     </h2>
                     <p className="text-center mt-3 md:w-2/3 mx-auto text-white">
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s.
-                        Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry. Lorem Ipsum has been the
-                        industry's standard dummy text ever since the 1500s.
+                        Searching for your perfect home, lucrative investment
+                        opportunity, or ideal plot of land? Look no further! We
+                        are Ahmedabad's leading property dealer, dedicated to
+                        exceeding your expectations at every step.
                     </p>
                 </div>
                 <div className="flex flex-wrap -m-4 text-center">
@@ -111,9 +109,7 @@ export const PropertyStatus = () => {
                             <h2 className="title-font font-medium  text-3xl md:text-4xl">
                                 {commercial}+
                             </h2>
-                            <p className="text-lg font-medium">
-                                Commercial Rent
-                            </p>
+                            <p className="text-lg font-medium">Commercial</p>
                         </div>
                     </div>
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
@@ -122,9 +118,7 @@ export const PropertyStatus = () => {
                             <h2 className="title-font font-medium  text-3xl md:text-4xl">
                                 {residential}+
                             </h2>
-                            <p className="text-lg font-medium">
-                                Residential Rent
-                            </p>
+                            <p className="text-lg font-medium">Residential</p>
                         </div>
                     </div>
                     <div className="p-4 md:w-1/4 sm:w-1/2 w-full">
