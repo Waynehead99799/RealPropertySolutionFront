@@ -21,11 +21,11 @@ export const ContactSection = () => {
                                 What are you waiting for?
                             </h2>
                             <p className="mb-6 pb-2 lg:pb-0">
-                                Lorem ipsum dolor, sit amet consectetur
-                                adipisicing elit. Maxime, sint, repellat vel quo
-                                quisquam accusamus in qui at ipsa enim quibusdam
-                                illo laboriosam omnis. Labore itaque illum
-                                distinctio eum neque!
+                                Ready to take your project to the next level?
+                                We're passionate about helping businesses like
+                                yours achieve their goals. Drop us a line and
+                                let's discuss how we can collaborate to bring
+                                your vision to life
                             </p>
                             <ContactForm />
                         </div>

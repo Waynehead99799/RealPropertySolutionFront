@@ -13,12 +13,14 @@ const ContactSchema = () => {
                             <h2 className="mb-4 text-3xl md:text-4xl tracking-tight font-extrabold text-gray-900">
                                 Get In Touch With Us
                             </h2>
-                            <p className="text-sm leading-relaxed text-body-color mb-9">
-                                Lorem ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eius tempor incididunt
-                                ut labore et dolore magna aliqua. Ut enim adiqua
-                                minim veniam quis nostrud exercitation ullamco
+                            <p className="mb-6 pb-2 lg:pb-0">
+                                Ready to take your project to the next level?
+                                We're passionate about helping businesses like
+                                yours achieve their goals. Drop us a line and
+                                let's discuss how we can collaborate to bring
+                                your vision to life!
                             </p>
+
                             <div className="mb-5 flex w-full max-w-[370px]">
                                 <div className="bg-primary/5 text-primary mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded sm:h-[70px] sm:max-w-[70px]">
                                     <svg
@@ -39,8 +41,9 @@ const ContactSchema = () => {
                                         Our Location
                                     </h4>
                                     <p className="text-base text-body-color ">
-                                        99 S.t Jomblo Park Pekanbaru 28292.
-                                        Indonesia
+                                        915, Gala Empire, Opp. Doordarshan
+                                        Tower, Nr. Drive In Rd, Thaltej
+                                        Ahmadabad.
                                     </p>
                                 </div>
                             </div>
@@ -83,7 +86,7 @@ const ContactSchema = () => {
                                         Phone Number
                                     </h4>
                                     <p className="text-base text-body-color ">
-                                        (+62)81 414 257 9980
+                                        (+91) 9909953645
                                     </p>
                                 </div>
                             </div>
@@ -107,7 +110,7 @@ const ContactSchema = () => {
                                         Email Address
                                     </h4>
                                     <p className="text-base text-body-color ">
-                                        info@yourdomain.com
+                                        realpropertysolution31@gmail.com
                                     </p>
                                 </div>
                             </div>
@@ -934,7 +937,7 @@ const ContactSchema = () => {
                         width="100%"
                         height="100%"
                         title="map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3671.9407738843565!2d72.49846498075706!3d23.025946725466273!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e9ba6efbbc7af%3A0x9aa97872c7d46027!2sSankalp%20Iconic%20Towers!5e0!3m2!1sen!2sin!4v1698597977981!5m2!1sen!2sin"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.549784504506!2d72.5225336752584!3d23.047484579156215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e85ab8579d969%3A0x725cea312e2d25eb!2sReal%20property%20solution!5e1!3m2!1sen!2sin!4v1702721853416!5m2!1sen!2sin"
                     ></iframe>
                 </div>
             </section>
