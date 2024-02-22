@@ -15,7 +15,7 @@ const API = (force = false): AxiosInstance => {
     }
 
     axiosInstance = axios.create({
-        baseURL: `${process.env.NEXT_API_ENDPOINT}`,
+        baseURL: `https://real-property-solution-back.vercel.app`,
     });
 
     return axiosInstance;

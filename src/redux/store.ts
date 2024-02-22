@@ -2,6 +2,16 @@ import { AnyAction, configureStore, Store } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { createWrapper, HYDRATE, MakeStore } from "next-redux-wrapper";
 import rootReducer, { RootState } from "./reducers";
+import listingsReducer from "./slices/listingsSlice";
+import { ThunkAction } from "redux-thunk"; // Import ThunkAction type from redux-thunk
+
+// Define AppThunk type
+export type AppThunk<ReturnType = void> = ThunkAction<
+    ReturnType,
+    RootState,
+    unknown,
+    AnyAction
+>;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 const reducer = (state: any, action: AnyAction) => {
@@ -19,20 +29,17 @@ const reducer = (state: any, action: AnyAction) => {
 
 export const getStore = () => {
     return configureStore({
-        reducer,
+        reducer: {
+            dashboard: rootReducer, // Assuming 'rootReducer' corresponds to your dashboard reducer
+            listings: listingsReducer,
+        },
     });
 };
 
 setupListeners(getStore().dispatch);
 
-// export type AppDispatch = typeof getStore().dispatch;
-// export const useAppDispatch = () => useDispatch<AppDispatch>();
-
-/**
- * @param initialState The store's initial state (on the client side, the state of the server-side store is passed here)
- */
 const makeStore: MakeStore<Store<RootState>> = () => {
-    return getStore();
+    return getStore() as Store<RootState>;
 };
 
 export const wrapper = createWrapper<Store<RootState>>(makeStore, {

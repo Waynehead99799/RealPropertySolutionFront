@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import HomeStyle from "./homeStyle.module.scss";
 import { DoubleRightOutlined } from "@ant-design/icons";
 import Image from "next/image";
@@ -8,8 +8,23 @@ import { PropertyGallery } from "@components/property/propertyGallery";
 import { Testimonials } from "@components/home/testimonials";
 import { PropertyStatus } from "@components/home/propertyStatus";
 import { ContactSection } from "@components/home/contact";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@redux/reducers";
+import { fetchListings } from "@redux/actions";
 
 export const HomeScene = () => {
+    const dispatch = useDispatch();
+    const {
+        data: listings,
+        loading,
+        error,
+    } = useSelector((state: RootState) => state.listings);
+
+    useEffect(() => {
+        dispatch(fetchListings()); // Dispatch the fetchListings action on component mount
+    }, [dispatch]);
+
+    console.log(listings);
     return (
         <>
             <section

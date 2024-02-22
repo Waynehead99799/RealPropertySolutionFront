@@ -1,0 +1,147 @@
+Folder PATH listing for volume New Volume
+Volume serial number is ACBC-1ED9
+G:.
+|   tree.txt
+|   
++---components
+|   +---common
+|   |       bannerSection.tsx
+|   |       contactForm.tsx
+|   |       filterForm.tsx
+|   |       
+|   +---home
+|   |       contact.tsx
+|   |       propertyStatus.tsx
+|   |       testimonials.tsx
+|   |       
+|   +---layout
+|   |   +---blankLayout
+|   |   |       blankLayoutComponent.tsx
+|   |   |       blankLayoutStyles.module.scss
+|   |   |       
+|   |   \---mainLayout
+|   |       |   mainLayoutComponent.tsx
+|   |       |   mainLayoutStyles.module.scss
+|   |       |   
+|   |       +---footer
+|   |       |       footer.tsx
+|   |       |       
+|   |       \---header
+|   |               headerComponent.tsx
+|   |               
+|   +---property
+|   |       propertyBox.tsx
+|   |       propertyGallery.tsx
+|   |       
+|   \---theme
+|       |   index.tsx
+|       |   
+|       +---button
+|       |       index.tsx
+|       |       
+|       +---defaultSkeleton
+|       |       defaultSkeleton.module.scss
+|       |       index.tsx
+|       |       
+|       +---form
+|       |       formFieldsComponent.tsx
+|       |       
+|       +---icons
+|       |       BathIcon.tsx
+|       |       BedsIcon.tsx
+|       |       commercialIcon.tsx
+|       |       Email.tsx
+|       |       eyeIcon.tsx
+|       |       facebook.tsx
+|       |       Instagram.tsx
+|       |       landIcon.tsx
+|       |       LevelsIcon.tsx
+|       |       LinkedIn.tsx
+|       |       Location.tsx
+|       |       locationsIcon.tsx
+|       |       menu.tsx
+|       |       openEyeIcon.tsx
+|       |       Phone.tsx
+|       |       residentialIcon.tsx
+|       |       SqtIcon.tsx
+|       |       Twitter.tsx
+|       |       yesIcon.tsx
+|       |       
+|       +---logo
+|       |       index.tsx
+|       |       
+|       +---SearchInput
+|       |       SearchInput.module.scss
+|       |       SearchInputComponent.tsx
+|       |       
+|       \---spinner
+|               index.tsx
+|               
++---containers
+|   +---about
+|   |       aboutContainer.tsx
+|   |       aboutSchema.tsx
+|   |       
+|   +---commercial
+|   |       commercialContainer.tsx
+|   |       commercialSchema.tsx
+|   |       
+|   +---contact
+|   |       contactContainer.tsx
+|   |       contactSchema.tsx
+|   |       
+|   +---error
+|   |       errorComponent.tsx
+|   |       errorStyles.module.scss
+|   |       
+|   +---home
+|   |       homeContainer.tsx
+|   |       homeScene.tsx
+|   |       homeStyle.module.scss
+|   |       
+|   +---land
+|   |       landContainer.tsx
+|   |       landSchema.tsx
+|   |       
+|   +---locations
+|   |       locationsContainer.tsx
+|   |       locationsSchema.tsx
+|   |       
+|   +---property-detail
+|   |       propertyDetailContainer.tsx
+|   |       propertyDetailSchema.tsx
+|   |       
+|   \---residential
+|           residentialContainer.tsx
+|           residentialSchema.tsx
+|           
++---contexts
+|       layoutContext.tsx
+|       
++---libs
+|       constants.tsx
+|       helpers.ts
+|       localstorageHook.tsx
+|       types.ts
+|       
++---redux
+|   |   actions.ts
+|   |   reducers.ts
+|   |   store.ts
+|   |   
+|   +---services
+|   |       common.api.ts
+|   |       dashboard.api.ts
+|   |       
+|   \---slices
+|       \---dashboard
+|               index.ts
+|               
++---schemas
+|       contactFormSchema.tsx
+|       verificationFormSchema.tsx
+|       
+\---styles
+        global.scss
+        variables.scss
+        
