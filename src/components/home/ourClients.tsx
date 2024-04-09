@@ -34,7 +34,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600"
                                 viewBox="0 0 125 35"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600 "
                                 viewBox="0 0 86 29"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +74,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-8 hover:text-gray-900 dark:hover:text-white"
+                                className="h-8 hover:text-grey-600 "
                                 viewBox="0 0 151 34"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600 "
                                 viewBox="0 0 124 38"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -122,7 +122,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600 "
                                 viewBox="0 0 137 37"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -208,7 +208,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-6 hover:text-gray-900 dark:hover:text-white"
+                                className="h-6 hover:text-grey-600 "
                                 viewBox="0 0 124 21"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -270,7 +270,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-8 hover:text-gray-900 dark:hover:text-white"
+                                className="h-8 hover:text-grey-600 "
                                 viewBox="0 0 151 34"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -300,7 +300,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600 "
                                 viewBox="0 0 124 38"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -318,7 +318,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-9 hover:text-gray-900 dark:hover:text-white"
+                                className="h-9 hover:text-grey-600 "
                                 viewBox="0 0 137 37"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -404,7 +404,7 @@ export const OurClients = () => {
                             className="flex justify-center items-center"
                         >
                             <svg
-                                className="h-6 hover:text-gray-900 dark:hover:text-white"
+                                className="h-6 hover:text-grey-600 "
                                 viewBox="0 0 124 21"
                                 fill="currentColor"
                                 xmlns="http://www.w3.org/2000/svg"
