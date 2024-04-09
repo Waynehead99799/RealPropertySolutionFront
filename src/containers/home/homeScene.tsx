@@ -2,7 +2,7 @@ import React from "react";
 import HomeStyle from "./homeStyle.module.scss";
 import { DoubleRightOutlined } from "@ant-design/icons";
 import { PropertyBox } from "@components/property/propertyBox";
-import { GALLERY, PROPERTY_DATA } from "src/libs/constants";
+import { GALLERY } from "src/libs/constants";
 import { PropertyGallery } from "@components/property/propertyGallery";
 import { Testimonials } from "@components/home/testimonials";
 import { PropertyStatus } from "@components/home/propertyStatus";
@@ -15,8 +15,7 @@ interface HomeSceneProps {
 }
 
 export const HomeScene = (props: HomeSceneProps) => {
-    const { propertyData, isLoading } = props;
-    console.log("propertyData", propertyData);
+    const { propertyData } = props;
 
     return (
         <>
@@ -97,7 +96,7 @@ export const HomeScene = (props: HomeSceneProps) => {
                     their growth potential and market stability.
                 </p>
                 <div className="grid gap-x-6 lg:grid-cols-3">
-                    <PropertyBox data={PROPERTY_DATA} />
+                    <PropertyBox data={propertyData} />
                 </div>
             </section>
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-14">
