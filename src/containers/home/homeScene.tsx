@@ -1,13 +1,13 @@
 import React from "react";
 import HomeStyle from "./homeStyle.module.scss";
 import { DoubleRightOutlined } from "@ant-design/icons";
-import Image from "next/image";
 import { PropertyBox } from "@components/property/propertyBox";
 import { GALLERY, PROPERTY_DATA } from "src/libs/constants";
 import { PropertyGallery } from "@components/property/propertyGallery";
 import { Testimonials } from "@components/home/testimonials";
 import { PropertyStatus } from "@components/home/propertyStatus";
 import { ContactSection } from "@components/home/contact";
+import { OurClients } from "@components/home/ourClients";
 
 interface HomeSceneProps {
     propertyData: any;
@@ -86,6 +86,7 @@ export const HomeScene = (props: HomeSceneProps) => {
                     </div>
                 </div>
             </section>
+            <OurClients />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5">
                 <h2 className=" text-3xl md:text-4xl tracking-tight font-extrabold text-center text-gray-900">
                     Properties
