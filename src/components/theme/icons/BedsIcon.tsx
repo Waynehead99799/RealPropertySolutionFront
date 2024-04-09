@@ -11,7 +11,7 @@ export const BedsIcon = (props: React.SVGProps<SVGSVGElement>) => {
             {...props}
         >
             <path
-                stroke="#CB0000"
+                stroke="#B4131E"
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}

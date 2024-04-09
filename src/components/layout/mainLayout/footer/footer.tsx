@@ -36,7 +36,7 @@ export const Footer = () => {
                     <div className="text-center py-8">
                         <div className="flex items-center justify-center mb-10 md:mt-3">
                             <Image
-                                src="/logo.svg"
+                                src="/logo.png"
                                 width={153}
                                 height={50}
                                 alt="Logo"

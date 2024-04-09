@@ -3,7 +3,7 @@ const withLess = require("next-with-less");
 
 const path = require("path");
 const runtimeCaching = require("next-pwa/cache");
-// const generateRobotsTxt = require("./scripts/generate-robots-txt");
+const generateRobotsTxt = require("./scripts/generate-robots-txt");
 
 let nextConfig = {
     reactStrictMode: true,
@@ -22,9 +22,9 @@ let nextConfig = {
         domains: ["mdbcdn.b-cdn.net"], // Add your image domains here
     },
     webpack(config, { isServer }) {
-        // if (isServer) {
-        //     generateRobotsTxt();
-        // }
+        if (isServer) {
+            generateRobotsTxt();
+        }
         return config;
     },
     // async redirects() {
@@ -54,7 +54,7 @@ const plugins = [
             lessLoaderOptions: {
                 lessOptions: {
                     modifyVars: {
-                        "primary-color": "#CB0000",
+                        "primary-color": "#B4131E",
                         "link-color": "#146EB4",
                         "success-color": "#6DB324",
                         "warning-color": "#F26B1D",

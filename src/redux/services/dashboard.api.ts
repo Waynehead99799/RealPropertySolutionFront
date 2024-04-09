@@ -3,7 +3,7 @@ import { fetch } from "src/libs/helpers";
 
 export const getDashboardListAPI = (): Promise<DashboardResponseSuccess> => {
     return fetch({
-        url: "/patient/dashboard",
+        url: "/properties/",
         method: "GET",
     });
 };

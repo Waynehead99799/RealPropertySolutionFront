@@ -48,9 +48,9 @@ export const Header = () => {
                     <div className="container mx-auto px-6 lg:px-10 2xl:px-32 flex items-center justify-between py-2">
                         <Link href="/">
                             <Image
-                                src="/logo.svg"
+                                src="/logo.png"
                                 width={153}
-                                height={76}
+                                height={50}
                                 alt="Logo"
                             />
                         </Link>
@@ -115,7 +115,7 @@ export const Header = () => {
                                     <div className="overflow-y-auto py-6">
                                         <div className="flex items-center justify-between px-4">
                                             <Image
-                                                src="/logo.svg"
+                                                src="/logo.png"
                                                 width={92}
                                                 height={46}
                                                 alt="Logo"

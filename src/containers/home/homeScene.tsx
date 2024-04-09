@@ -9,7 +9,15 @@ import { Testimonials } from "@components/home/testimonials";
 import { PropertyStatus } from "@components/home/propertyStatus";
 import { ContactSection } from "@components/home/contact";
 
-export const HomeScene = () => {
+interface HomeSceneProps {
+    propertyData: any;
+    isLoading: boolean | any;
+}
+
+export const HomeScene = (props: HomeSceneProps) => {
+    const { propertyData, isLoading } = props;
+    console.log("propertyData", propertyData);
+
     return (
         <>
             <section
