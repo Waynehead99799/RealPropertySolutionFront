@@ -118,7 +118,7 @@ export const Header = () => {
                                             <Image
                                                 src="/logo.png"
                                                 width={92}
-                                                height={40}
+                                                height={36}
                                                 alt="Logo"
                                             />
                                             <button
