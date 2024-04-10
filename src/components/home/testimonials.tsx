@@ -10,21 +10,21 @@ export const Testimonials = () => {
     const userData = [
         {
             client_name: "Maria Kate",
-            position: "Photographer",
+            position: "Property Investor",
             client_img: "/images/maria-kate.jpg",
             comment:
                 "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
         },
         {
             client_name: "John Doe",
-            position: " Web Developer",
+            position: "property Owner",
             client_img: "/images/john-doe.jpg",
             comment:
                 "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
         },
         {
             client_name: "Anna Deynah",
-            position: "UX Designer",
+            position: "Proud house Owner",
             client_img: "/images/anna-deynah.jpg",
             comment:
                 "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
