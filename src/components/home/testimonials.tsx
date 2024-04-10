@@ -9,25 +9,25 @@ import Image from "next/image";
 export const Testimonials = () => {
     const userData = [
         {
-            client_name: "Maria Kate",
+            client_name: "Rekha Ben Parekh",
             position: "Property Investor",
             client_img: "/images/maria-kate.jpg",
             comment:
-                "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
+                "Real Property Solution Estate Agency's dedication to my long-term success surpassed mere financial gains. Their strategic guidance and personalized approach ensured every investment decision was emotionally fulfilling and financially rewarding.",
         },
         {
-            client_name: "John Doe",
-            position: "property Owner",
+            client_name: "Ramesh Bhai Bhuva",
+            position: "Property Owner",
             client_img: "/images/john-doe.jpg",
             comment:
-                "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
+                "Real Property solutions Estate Agency made me feel like family, prioritizing my emotional attachment over just making money. Their focus on ensuring my satisfaction ensured a seamless selling process where I felt valued and supported throughout.",
         },
         {
-            client_name: "Anna Deynah",
-            position: "Proud house Owner",
+            client_name: "Chandresh Bhai Parekh",
+            position: "Property Buyer",
             client_img: "/images/anna-deynah.jpg",
             comment:
-                "In ac turpis justo. Vivamus auctor quam vitae odio feugiat pulvinar. Sed semper ligula sed lorem tincidunt dignissim. Nam sed cursus lectus. Proin non rutrum magna. Proin gravida,justo et imperdiet tristique turpis nisiviverra.",
+                "With Ahmedabad Real Estate Agency, it wasn't just about closing a deal; it was about finding a home where my heart belonged. Their genuine care and commitment to my needs ensured I found not just a property, but a place where memories are made and dreams are realized.",
         },
     ];
     return (
