@@ -89,26 +89,27 @@ export const Header = () => {
                 </nav>
             </header>
             <div
-                className={`lg:hidden block relative z-20 ease-in-out duration-500 ${
-                    !collapsed && "opacity-0 invisible"
-                }`}
+                className={`lg:hidden block relative z-20 ease-in-out duration-500 
+                ${!collapsed && "opacity-0 invisible"}`}
                 aria-labelledby="slide-over-title"
                 role="dialog"
                 aria-modal="true"
             >
                 <div
-                    className={`fixed inset-0 backdrop-blur-sm bg-opacity-75 transition-opacity ease-in-out duration-500 ${
-                        !collapsed ? " opacity-0" : "visible"
-                    }`}
+                    className={`fixed inset-0 backdrop-blur-sm bg-opacity-75 transition-opacity ease-in-out duration-500 
+                    ${!collapsed ? " opacity-0" : "visible"}`}
                 ></div>
                 <div className="fixed inset-0 overflow-hidden">
                     <div className="absolute inset-0 overflow-hidden">
                         <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full">
                             <div
-                                className={`pointer-events-auto w-screen max-w-[270px] md:max-w-xs ease-in-out duration-500 sm:duration-700 ${
+                                className={`pointer-events-auto w-screen max-w-[270px] md:max-w-xs ease-in-out duration-500 sm:duration-700 
+                                ${
+                                    // eslint-disable-next-line prettier/prettier
                                     !collapsed
                                         ? "transform transition opacity-0 translate-x-full"
                                         : "visible"
+                                    // eslint-disable-next-line prettier/prettier
                                 }`}
                             >
                                 <div className="h-full overflow-y-scroll bg-white shadow-xl">
@@ -117,7 +118,7 @@ export const Header = () => {
                                             <Image
                                                 src="/logo.png"
                                                 width={92}
-                                                height={46}
+                                                height={36}
                                                 alt="Logo"
                                             />
                                             <button

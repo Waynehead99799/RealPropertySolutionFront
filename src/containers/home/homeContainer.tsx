@@ -4,6 +4,7 @@ import { HomeScene } from "./homeScene";
 import { useDispatch, useSelector } from "react-redux";
 import { DashboardListState, fetchDashboard } from "@redux/slices/dashboard";
 import { RootState } from "@redux/reducers";
+import { FloatingWhatsApp } from "react-floating-whatsapp";
 
 const HomeContainer = () => {
     const { data, isLoading }: DashboardListState = useSelector(
@@ -20,7 +21,20 @@ const HomeContainer = () => {
         return () => {};
     }, []);
 
-    return <HomeScene propertyData={data} isLoading={isLoading} />;
+    return (
+        <>
+            <FloatingWhatsApp
+                phoneNumber={"9909953645"}
+                accountName="Sanket"
+                allowEsc
+                allowClickAway
+                notification
+                notificationSound
+                avatar="/images/maria-kate.jpg"
+            />
+            <HomeScene propertyData={data} isLoading={isLoading} />
+        </>
+    );
 };
 
 HomeContainer.Layout = MainLayoutComponent;
