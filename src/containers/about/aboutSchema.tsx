@@ -9,8 +9,26 @@ import React from "react";
 const AboutSchema = () => {
     const team = [
         {
-            member_name: "Marta Smith",
-            position: "Frontend Developer",
+            member_name: "Mehul Galchar",
+            position: "Owner",
+            img: "/images/mehulbhai.jpg",
+            fb_link: "https://www.facebook.com/mehul.galchar.12",
+            insta_link: "https://www.instagram.com/galchar.mehul/",
+            lin_link: "#",
+            twit_link: "#",
+        },
+        {
+            member_name: "Ghanshyam Ranpariya",
+            position: "Real Estate Broker",
+            img: "/images/bhaskar.jpeg",
+            fb_link: "#",
+            insta_link: "#",
+            lin_link: "#",
+            twit_link: "#",
+        },
+        {
+            member_name: "Darshak Vasani",
+            position: "Real Estate Broker",
             img: "/images/marta-smith.jpg",
             fb_link: "#",
             insta_link: "#",
@@ -18,8 +36,8 @@ const AboutSchema = () => {
             twit_link: "#",
         },
         {
-            member_name: "Darren Randolph",
-            position: "Marketing expert",
+            member_name: "Chintan Ranpariya",
+            position: "Real Estate Broker",
             img: "/images/john-doe.jpg",
             fb_link: "#",
             insta_link: "#",
@@ -27,9 +45,27 @@ const AboutSchema = () => {
             twit_link: "#",
         },
         {
-            member_name: "Ayat Black",
-            position: "Web designer",
-            img: "/images/anna-deynah.jpg",
+            member_name: "Priyash Desai",
+            position: "Real Estate Broker",
+            img: "/images/priyansh.jpg",
+            fb_link: "#",
+            insta_link: "#",
+            lin_link: "#",
+            twit_link: "#",
+        },
+        {
+            member_name: "Parth Desai",
+            position: "Real Estate Broker",
+            img: "/images/IMG_9309.jpg",
+            fb_link: "#",
+            insta_link: "#",
+            lin_link: "#",
+            twit_link: "#",
+        },
+        {
+            member_name: "Dharmik Aahir",
+            position: "Real Estate Broker",
+            img: "/images/dhamo.jpeg",
             fb_link: "#",
             insta_link: "#",
             lin_link: "#",
@@ -53,7 +89,7 @@ const AboutSchema = () => {
                                 </div>
                                 <div className="py-3 sm:py-4">
                                     <img
-                                        src="/images/image-2.jpg"
+                                        src="/images/team.jpeg"
                                         alt=""
                                         className="w-full rounded-2xl"
                                     />
@@ -62,7 +98,7 @@ const AboutSchema = () => {
                             <div className="w-full px-3 sm:px-4 xl:w-1/2">
                                 <div className="relative z-1 my-4">
                                     <img
-                                        src="/images/image-3.jpg"
+                                        src="/images/mehulleader.jpg"
                                         alt=""
                                         className="w-full rounded-2xl"
                                     />
@@ -646,10 +682,21 @@ const AboutSchema = () => {
                                 Make your customers happy by giving services.
                             </h2>
                             <p className="mb-5 text-base text-body-color ">
-                                It is a long established fact that a reader will
-                                be distracted by the readable content of a page
-                                when looking at its layout. The point of using
-                                Lorem Ipsum is that it has a more-or-less.
+                                At RealProperty Solution, we believe that happy
+                                customers are the cornerstone of our success. We
+                                are dedicated to exceeding your expectations by
+                                providing unparalleled service and support at
+                                every stage of your real estate journey.
+                            </p>
+                            <p className="mb-8 text-base text-body-color ">
+                                From personalized guidance and expert advice to
+                                seamless transactions and exceptional results,
+                                we are committed to making your experience with
+                                us truly rewarding. Our team of highly skilled
+                                brokers goes above and beyond to ensure that
+                                your needs are met with professionalism,
+                                integrity, and a genuine passion for customer
+                                satisfaction.
                             </p>
                             <p className="mb-8 text-base text-body-color ">
                                 A domain name is one of the first steps to
@@ -658,16 +705,10 @@ const AboutSchema = () => {
                                 business.
                             </p>
                             <p className="mb-8 text-base text-body-color ">
-                                A domain name is one of the first steps to
-                                establishing your brand. Secure a consistent
-                                brand image with a domain name that matches your
-                                business.
-                            </p>
-                            <p className="mb-8 text-base text-body-color ">
-                                A domain name is one of the first steps to
-                                establishing your brand. Secure a consistent
-                                brand image with a domain name that matches your
-                                business.
+                                Experience the difference of working with a
+                                trusted partner who prioritizes your happiness
+                                and success. Choose RealProperty Solution for
+                                all your real estate needs.
                             </p>
                         </div>
                     </div>
@@ -678,9 +719,9 @@ const AboutSchema = () => {
                     Our Awesome Team
                 </h2>
                 <p className="mb-10 text-center mt-3 md:w-1/2 mx-auto">
-                    There are many variations of passages of Lorem Ipsum
-                    available but the majority have suffered alteration in some
-                    form.
+                    Dedicated professionals committed to making your real estate
+                    experience exceptional. Experience the difference with our
+                    skilled brokers by your side.
                 </p>
 
                 <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 mt-28">

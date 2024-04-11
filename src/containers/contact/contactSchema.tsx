@@ -14,11 +14,10 @@ const ContactSchema = () => {
                                 Get In Touch With Us
                             </h2>
                             <p className="mb-6 pb-2 lg:pb-0">
-                                Ready to take your project to the next level?
-                                We're passionate about helping businesses like
-                                yours achieve their goals. Drop us a line and
-                                let's discuss how we can collaborate to bring
-                                your vision to life!
+                                Reach out today and let us help you navigate
+                                your real estate journey with confidence and
+                                expertise. Your dream property is just a call or
+                                click away.
                             </p>
 
                             <div className="mb-5 flex w-full max-w-[370px]">
