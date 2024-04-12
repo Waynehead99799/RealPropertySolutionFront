@@ -3,6 +3,7 @@ import { InstagramIcon } from "@components/theme/icons/Instagram";
 import { LinkedInIcon } from "@components/theme/icons/LinkedIn";
 import { TwitterIcon } from "@components/theme/icons/Twitter";
 import { FacebookIcon } from "@components/theme/icons/facebook";
+import { WhatsappIcon } from "@components/theme/icons/whastapp";
 import Link from "next/link";
 import React from "react";
 
@@ -14,61 +15,74 @@ const AboutSchema = () => {
             img: "/images/mehulbhai.jpg",
             fb_link: "https://www.facebook.com/mehul.galchar.12",
             insta_link: "https://www.instagram.com/galchar.mehul/",
-            lin_link: "#",
+            watsp_link: "https://wa.me/919909953645",
             twit_link: "#",
         },
         {
-            member_name: "Ghanshyam Ranpariya",
+            member_name: "Ghanshyam Patel",
             position: "Real Estate Broker",
             img: "/images/bhaskar.jpeg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/917878827811",
             twit_link: "#",
         },
         {
-            member_name: "Darshak Vasani",
+            member_name: "Darshak Patel",
             position: "Real Estate Broker",
             img: "/images/marta-smith.jpg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
-            twit_link: "#",
-        },
-        {
-            member_name: "Chintan Ranpariya",
-            position: "Real Estate Broker",
-            img: "/images/john-doe.jpg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
-            twit_link: "#",
-        },
-        {
-            member_name: "Priyash Desai",
-            position: "Real Estate Broker",
-            img: "/images/priyansh.jpg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
-            twit_link: "#",
-        },
-        {
-            member_name: "Parth Desai",
-            position: "Real Estate Broker",
-            img: "/images/IMG_9309.jpg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/919265189330",
             twit_link: "#",
         },
         {
             member_name: "Dharmik Aahir",
             position: "Real Estate Broker",
             img: "/images/dhamo.jpeg",
-            fb_link: "#",
-            insta_link: "#",
-            lin_link: "#",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/919687530231",
+            twit_link: "#",
+        },
+        {
+            member_name: "Chintan Patel",
+            position: "Real Estate Broker",
+            img: "/images/john-doe.jpg",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/918460637168",
+            twit_link: "#",
+        },
+        {
+            member_name: "Priyash Desai",
+            position: "Real Estate Broker",
+            img: "/images/priyansh.jpg",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/919909915655",
+            twit_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+        },
+        {
+            member_name: "Parth Desai",
+            position: "Real Estate Broker",
+            img: "/images/IMG_9309.jpg",
+            fb_link:
+                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
+            insta_link:
+                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
+            watsp_link: "https://wa.me/919909974645",
             twit_link: "#",
         },
     ];
@@ -741,25 +755,37 @@ const AboutSchema = () => {
                                     <h5 className="mb-1 text-lg font-bold">
                                         {t.member_name}
                                     </h5>
-                                    <p className="mb-6">{t.position}</p>
+                                    {/* <p className="mb-6">{t.position}</p> */}
                                     <div className="flex items-center justify-center">
                                         {t.fb_link && (
-                                            <Link href={t.fb_link}>
+                                            <Link
+                                                href={t.fb_link}
+                                                target="_blank"
+                                            >
                                                 <FacebookIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
                                             </Link>
                                         )}
                                         {t.twit_link && (
-                                            <Link href={t.twit_link}>
+                                            <Link
+                                                href={t.twit_link}
+                                                target="_blank"
+                                            >
                                                 <TwitterIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
                                             </Link>
                                         )}
-                                        {t.lin_link && (
-                                            <Link href={t.lin_link}>
-                                                <LinkedInIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                        {t.watsp_link && (
+                                            <Link
+                                                href={t.watsp_link}
+                                                target="_blank"
+                                            >
+                                                <WhatsappIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
                                             </Link>
                                         )}
                                         {t.insta_link && (
-                                            <Link href={t.insta_link}>
+                                            <Link
+                                                href={t.insta_link}
+                                                target="_blank"
+                                            >
                                                 <InstagramIcon className="hover:text-primary hover:cursor-pointer" />
                                             </Link>
                                         )}

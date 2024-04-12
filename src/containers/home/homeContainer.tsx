@@ -24,13 +24,13 @@ const HomeContainer = () => {
     return (
         <>
             <FloatingWhatsApp
-                phoneNumber={"9909953645"}
-                accountName="Sanket"
+                phoneNumber={"+91 9909953645"}
+                accountName="Mehul Galchar"
                 allowEsc
                 allowClickAway
                 notification
                 notificationSound
-                avatar="/images/maria-kate.jpg"
+                avatar="/images/mehulbhai.jpg"
             />
             <HomeScene propertyData={data} isLoading={isLoading} />
         </>

@@ -27,7 +27,7 @@ export const HomeScene = (props: HomeSceneProps) => {
                     <div className="container mx-auto px-6 lg:px-10 2xl:px-32 text-center md:px-12">
                         <h1 className="mt-2 mb-6 text-2xl font-semibold md:text-6xl xl:text-7xl text-white">
                             Where Vision Meets Value <br /> Real Property
-                            Solutions.
+                            Solution.
                         </h1>
                         <p className="text-white md:w-1/2 mx-auto mb-12">
                             "At Real Property Solutions, we don't just sell

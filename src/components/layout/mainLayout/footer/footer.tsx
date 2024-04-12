@@ -7,6 +7,7 @@ import { LinkedInIcon } from "@components/theme/icons/LinkedIn";
 import { InstagramIcon } from "@components/theme/icons/Instagram";
 import { LocationIcon } from "@components/theme/icons/Location";
 import { PhoneIcon } from "@components/theme/icons/Phone";
+import { WhatsappIcon } from "@components/theme/icons/whastapp";
 
 export const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -43,12 +44,34 @@ export const Footer = () => {
                             />
                             <span className="ml-5 mr-4 bg-black w-[1px] h-[26px]"></span>
                             <div className="flex justify-between items-center">
-                                <Link href={"#"}>
+                                <a
+                                    href={
+                                        "https://www.facebook.com/p/Real-Property-Solution-100054285771240/"
+                                    }
+                                    target="_blank"
+                                >
                                     <FacebookIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                </Link>
-                                <TwitterIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                <LinkedInIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                <InstagramIcon className="hover:text-primary hover:cursor-pointer" />
+                                </a>
+                                <a href={""} target="_blank">
+                                    <TwitterIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                </a>
+                                <a href={""} target="_blank">
+                                    <LinkedInIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                </a>
+                                <a
+                                    href={
+                                        "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44"
+                                    }
+                                    target="_blank"
+                                >
+                                    <InstagramIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                </a>
+                                <a
+                                    href={"https://wa.me/919909953645"}
+                                    target="_blank"
+                                >
+                                    <WhatsappIcon className=" hover:text-primary hover:cursor-pointer" />
+                                </a>
                             </div>
                         </div>
                         <div className="my-6">

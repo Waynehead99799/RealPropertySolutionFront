@@ -9,23 +9,23 @@ import Image from "next/image";
 export const Testimonials = () => {
     const userData = [
         {
-            client_name: "Rekha Ben Parekh",
+            client_name: "Maria Kate",
             position: "Property Investor",
             client_img: "/images/maria-kate.jpg",
             comment:
                 "Real Property Solution Estate Agency's dedication to my long-term success surpassed mere financial gains. Their strategic guidance and personalized approach ensured every investment decision was emotionally fulfilling and financially rewarding.",
         },
         {
-            client_name: "Ramesh Bhai Bhuva",
+            client_name: "Jhon Spencer",
             position: "Property Owner",
-            client_img: "/images/john-doe.jpg",
+            client_img: "/images/john-doe2.jpg",
             comment:
                 "Real Property solutions Estate Agency made me feel like family, prioritizing my emotional attachment over just making money. Their focus on ensuring my satisfaction ensured a seamless selling process where I felt valued and supported throughout.",
         },
         {
-            client_name: "Chandresh Bhai Parekh",
+            client_name: "marta-smith",
             position: "Property Buyer",
-            client_img: "/images/anna-deynah.jpg",
+            client_img: "/images/marta-smith12.jpg",
             comment:
                 "With Ahmedabad Real Estate Agency, it wasn't just about closing a deal; it was about finding a home where my heart belonged. Their genuine care and commitment to my needs ensured I found not just a property, but a place where memories are made and dreams are realized.",
         },
