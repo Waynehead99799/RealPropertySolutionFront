@@ -1,14 +1,21 @@
 {
   "name": "Real Property Solution",
   "short_name": "RPS",
+  "theme_color": "#F4900C",
   "description": "Real Property Solution in India",
   "start_url": "/",
   "display": "standalone",
+  "display_override": ["fullscreen", "minimal-ui"],
+  "orientation": "portrait",
   "background_color": "#ffffff",
+  "splash_pages": null,
+  "prefer_related_applications": true,
+  "id": "/",
   "icons": [{
       "src": "/icons/android-chrome-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/icons/android-chrome-512x512.png",
