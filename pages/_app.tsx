@@ -48,8 +48,8 @@ AppProps | any): JSX.Element => {
                 </title>
                 <meta name="description" content="Real Property Solutions" />
                 <meta name="keywords" content="Real Property Solutions" />
-                <meta name="theme-color" content="#F4900C" />
-                <meta name="msapplication-TileColor" content="#da532c" />
+                <meta name="theme-color" content="#ffffff" />
+                <meta name="msapplication-TileColor" content="#ffffff" />
                 <meta
                     name="apple-mobile-web-app-status-bar-style"
                     content="default"
@@ -86,7 +86,7 @@ AppProps | any): JSX.Element => {
                 <link
                     rel="mask-icon"
                     href="/icons/apple-touch-icon.png"
-                    color="#5bbad5"
+                    color="#fff"
                 />
                 <link
                     rel="apple-touch-startup-image"
