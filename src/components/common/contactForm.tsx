@@ -81,7 +81,10 @@ export const ContactForm = () => {
                     disabled={formState?.isSubmitting}
                 >
                     Send
-                    <SendOutlined />
+                    <SendOutlined
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}
+                    />
                 </Button>
             </div>
         </form>

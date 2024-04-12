@@ -43,7 +43,11 @@ export const HomeScene = (props: HomeSceneProps) => {
                             data-te-ripple-color="light"
                         >
                             Get Properties{" "}
-                            <DoubleRightOutlined className="ml-2" />
+                            <DoubleRightOutlined
+                                className="ml-2"
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}
+                            />
                         </button>
                     </div>
                 </div>

@@ -22,7 +22,12 @@ export const SearchInputComponent = (props: SearchInputComponentProps) => {
                     }
                 }}
                 allowClear
-                prefix={<SearchOutlined />}
+                prefix={
+                    <SearchOutlined
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}
+                    />
+                }
             />
         </div>
     );

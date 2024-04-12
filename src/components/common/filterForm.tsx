@@ -60,7 +60,10 @@ export const FilterForm = ({ onSubmit }: any) => {
                             loading={false}
                             disabled={formState?.isSubmitting}
                         >
-                            <FilterOutlined />
+                            <FilterOutlined
+                                onPointerEnterCapture={undefined}
+                                onPointerLeaveCapture={undefined}
+                            />
                         </Button>
                     </div>
                 </form>

@@ -20,7 +20,12 @@ const LandSchema = ({ onSubmit }: any) => {
                     data-te-ripple-init
                     data-te-ripple-color="light"
                 >
-                    View More <DoubleRightOutlined className="ml-2" />
+                    View More{" "}
+                    <DoubleRightOutlined
+                        className="ml-2"
+                        onPointerEnterCapture={undefined}
+                        onPointerLeaveCapture={undefined}
+                    />
                 </button>
             </section>
         </>
