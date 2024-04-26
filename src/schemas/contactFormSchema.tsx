@@ -4,7 +4,7 @@ export interface ContactFormInputs {
     name: string;
     email: string;
     phone: string;
-    msg: string;
+    message: string;
 }
 
 export const ContactFormValidateSchema = Yup.object({
@@ -17,7 +17,7 @@ export const ContactFormValidateSchema = Yup.object({
     phone: Yup.string()
         .required("Phone number is a required field")
         .matches(/^[0-9]+$/, "Phone number must contain only numbers"),
-    msg: Yup.string()
+    message: Yup.string()
         .required("Message is a required field")
         .matches(/^\s*\S[\s\S]*$/, "message cannot contain only blankspaces"),
 }).required();

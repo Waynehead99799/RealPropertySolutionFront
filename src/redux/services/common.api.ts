@@ -1,15 +1,9 @@
 import { fetch } from "src/libs/helpers";
 
-export const getPreSignedUrlAPI = (key: any): Promise<any> => {
+export const submitForm = (data: any): Promise<any> => {
     return fetch({
-        url: `/common/file/pre-sign-url?key=${key}`,
-        method: "GET",
-        params: key,
-    });
-};
-export const stopImpersonateAPI = (): Promise<any> => {
-    return fetch({
-        url: `/patient/impersonate/exit`,
+        url: `/general/sendmail`,
         method: "POST",
+        data,
     });
 };

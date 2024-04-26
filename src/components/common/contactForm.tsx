@@ -12,6 +12,7 @@ import {
     ContactFormValidateSchema,
 } from "src/schemas/contactFormSchema";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { submitForm } from "@redux/services/common.api";
 
 export const ContactForm = () => {
     const { register, handleSubmit, formState, setFocus } =
@@ -19,8 +20,13 @@ export const ContactForm = () => {
             resolver: yupResolver(ContactFormValidateSchema),
         });
 
-    const onSubmit = (values: any) => {
-        console.log(values);
+    const onSubmit = async (values: any) => {
+        try {
+            const res = await submitForm(values);
+            console.log("res", res);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -37,7 +43,7 @@ export const ContactForm = () => {
                         }}
                     />
                 </FormGroup>
-                <FormGroup className="mb-4 flex-grow md:ml-2">
+                <FormGroup className="mb-4 flex-grow md:ml-0 ml-2">
                     <InputField
                         {...{
                             register,
@@ -66,7 +72,7 @@ export const ContactForm = () => {
                     {...{
                         register,
                         formState,
-                        id: "msg",
+                        id: "message",
                         label: "Message",
                         placeholder: "Enter Message",
                     }}
