@@ -7,3 +7,10 @@ export const getDashboardListAPI = (): Promise<DashboardResponseSuccess> => {
         method: "GET",
     });
 };
+
+export const getPropertyDetails = async ({ id }: any): Promise<any> => {
+    return fetch({
+        url: `/properties/${id}`,
+        method: "GET",
+    });
+};

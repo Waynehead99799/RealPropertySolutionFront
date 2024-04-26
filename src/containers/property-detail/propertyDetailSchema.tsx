@@ -1,16 +1,17 @@
 import { BannerSection } from "@components/common/bannerSection";
 import { ContactForm } from "@components/common/contactForm";
 import React, { useState } from "react";
+import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
 // import required modules
-import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper/modules";
 import { BedsIcon } from "@components/theme/icons/BedsIcon";
 import { BathIcon } from "@components/theme/icons/BathIcon";
 import { LevelsIcon } from "@components/theme/icons/LevelsIcon";
@@ -18,15 +19,22 @@ import { SqtIcon } from "@components/theme/icons/SqtIcon";
 import { LocationIcon } from "@components/theme/icons/Location";
 import { PhoneIcon } from "@components/theme/icons/Phone";
 import { PropertyBox } from "@components/property/propertyBox";
-import { RELATED_PROPERTY } from "src/libs/constants";
 import { EmailIcon } from "@components/theme/icons/Email";
 
-const PropertyDetailSchema = () => {
+interface PropertyDetailSchemaProps {
+    propertyData: any;
+}
+
+const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
+    const {
+        propertyData: { property, relatedProperties },
+    } = props;
+
     const [thumbsSwiper, setThumbsSwiper]: any = useState(null);
 
     return (
         <>
-            <BannerSection title="Lorem Ipsum is dummy" />
+            <BannerSection title={property?.title ?? "Title"} />
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5 mb-20">
                 <div className="mb-16 flex flex-wrap lg:flex-row-reverse">
                     <div className="md:mb-6 md:mt-0 mt-10 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-1/4 lg:pl-6 order-2 md:order-1">
@@ -36,99 +44,74 @@ const PropertyDetailSchema = () => {
                     </div>
 
                     <div className="w-full shrink-0 grow-0 basis-auto lg:w-9/12 lg:pr-6 md:order-2 order-1">
-                        <div className="mb-10">
-                            <Swiper
-                                loop={true}
-                                spaceBetween={5}
-                                navigation={true}
-                                autoplay={{
-                                    delay: 2500,
-                                    disableOnInteraction: false,
-                                }}
-                                thumbs={{ swiper: thumbsSwiper }}
-                                modules={[
-                                    Autoplay,
-                                    FreeMode,
-                                    Navigation,
-                                    Thumbs,
-                                ]}
-                                className="mySwiper2"
-                            >
-                                <SwiperSlide>
-                                    <img src="/images/pic-1.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-2.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-4.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-4.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                            </Swiper>
-                            <Swiper
-                                onSwiper={setThumbsSwiper}
-                                loop={true}
-                                spaceBetween={1}
-                                slidesPerView={6}
-                                freeMode={true}
-                                autoplay={{
-                                    delay: 2500,
-                                    disableOnInteraction: false,
-                                }}
-                                watchSlidesProgress={true}
-                                modules={[
-                                    Autoplay,
-                                    FreeMode,
-                                    Navigation,
-                                    Thumbs,
-                                ]}
-                                className="mySwiper"
-                            >
-                                <SwiperSlide>
-                                    <img src="/images/pic-1.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-2.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-4.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-4.jpg" />
-                                </SwiperSlide>
-                                <SwiperSlide>
-                                    <img src="/images/pic-3.jpg" />
-                                </SwiperSlide>
-                            </Swiper>
-                        </div>
+                        {property?.images && property?.images?.length > 0 && (
+                            <div className="mb-10">
+                                <Swiper
+                                    loop={true}
+                                    spaceBetween={5}
+                                    navigation={true}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false,
+                                    }}
+                                    // eslint-disable-next-line prettier/prettier
+                                    thumbs={{
+                                        swiper:
+                                            thumbsSwiper &&
+                                            !thumbsSwiper.destroyed
+                                                ? thumbsSwiper
+                                                : null,
+                                    }}
+                                    modules={[
+                                        Autoplay,
+                                        FreeMode,
+                                        Navigation,
+                                        Thumbs,
+                                    ]}
+                                    className="mySwiper2"
+                                >
+                                    {property.images.map(
+                                        (i: string, index: number) => (
+                                            <SwiperSlide key={index}>
+                                                <img src={i} />
+                                            </SwiperSlide>
+                                        ),
+                                    )}
+                                </Swiper>
+                                <Swiper
+                                    onSwiper={setThumbsSwiper}
+                                    loop={true}
+                                    spaceBetween={1}
+                                    slidesPerView={6}
+                                    freeMode={true}
+                                    autoplay={{
+                                        delay: 2500,
+                                        disableOnInteraction: false,
+                                    }}
+                                    watchSlidesProgress={true}
+                                    modules={[
+                                        Autoplay,
+                                        FreeMode,
+                                        Navigation,
+                                        Thumbs,
+                                    ]}
+                                    className="mySwiper"
+                                >
+                                    {property?.images.map(
+                                        (i: string, index: number) => (
+                                            <SwiperSlide key={index}>
+                                                <img src={i} />
+                                            </SwiperSlide>
+                                        ),
+                                    )}
+                                </Swiper>
+                            </div>
+                        )}
                         <h3 className="mb-4 text-2xl font-bold">
-                            Property Description
+                            {property?.description}
                         </h3>
                         <div className="mb-4 flex items-center text-lg font-medium text-primary dark:text-primary-400">
-                            1.35 CR
+                            {property?.price} Rs
                         </div>
                         <p className="text-neutral-500 dark:text-neutral-300">
                             Duis sagittis, turpis in ullamcorper venenatis,
@@ -155,7 +138,7 @@ const PropertyDetailSchema = () => {
                                         Beds
                                     </span>
                                     <span className="text-base font-medium">
-                                        5
+                                        {property?.detail?.bed ?? "N/A"}
                                     </span>
                                 </p>
                             </div>
@@ -166,7 +149,7 @@ const PropertyDetailSchema = () => {
                                         Baths
                                     </span>
                                     <span className="text-base font-medium">
-                                        3
+                                        {property?.detail?.bath ?? "N/A"}
                                     </span>
                                 </p>
                             </div>
@@ -177,7 +160,7 @@ const PropertyDetailSchema = () => {
                                         Levels
                                     </span>
                                     <span className="text-base font-medium">
-                                        56
+                                        {property?.detail?.levels ?? "N/A"}
                                     </span>
                                 </p>
                             </div>
@@ -188,7 +171,7 @@ const PropertyDetailSchema = () => {
                                         Sqft
                                     </span>
                                     <span className="text-base font-medium">
-                                        1500
+                                        {property?.detail?.sqft ?? "N/A"}
                                     </span>
                                 </p>
                             </div>
@@ -200,19 +183,26 @@ const PropertyDetailSchema = () => {
                             <div className="flex md:items-center mb-3">
                                 <LocationIcon />
                                 <span className="ml-2 md:w-auto w-4/5">
-                                    402, Dwarkesh business hub, opp. Home Town,
-                                    Ahmedabad, Gujarat, India 380005
+                                    {property?.address ?? "N/A"}
                                 </span>
                             </div>
                             <div className="flex items-center">
-                                <div className="flex items-center">
-                                    <PhoneIcon />
-                                    <span className="ml-2">+917016799899</span>
-                                </div>
-                                <div className="flex items-center ml-5">
-                                    <EmailIcon />
-                                    <span className="ml-2">user@gmail.com</span>
-                                </div>
+                                {property?.phone && (
+                                    <div className="flex items-center">
+                                        <PhoneIcon />
+                                        <span className="ml-2">
+                                            {property?.phone}
+                                        </span>
+                                    </div>
+                                )}
+                                {property?.email && (
+                                    <div className="flex items-center ml-5">
+                                        <EmailIcon />
+                                        <span className="ml-2">
+                                            {property?.email}
+                                        </span>
+                                    </div>
+                                )}
                             </div>
                         </div>
                         <div className="mt-8">
@@ -220,7 +210,7 @@ const PropertyDetailSchema = () => {
                                 Related property
                             </h3>
                             <div className="grid gap-x-6 lg:grid-cols-3">
-                                <PropertyBox data={RELATED_PROPERTY} />
+                                <PropertyBox data={relatedProperties} />
                             </div>
                         </div>
                     </div>
