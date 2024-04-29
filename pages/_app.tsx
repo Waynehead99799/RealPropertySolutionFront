@@ -117,7 +117,7 @@ AppProps | any): JSX.Element => {
                             <Layout {...restLayoutProps}>
                                 {isLoading && (
                                     <>
-                                        <div>
+                                        <div className="h-96">
                                             <DefaultSkeleton isContent={true} />
                                         </div>
                                     </>
@@ -136,11 +136,14 @@ AppProps | any): JSX.Element => {
 };
 
 MyApp.getInitialProps = wrapper.getInitialPageProps(
-    (store) => async (appContext: AppContextType | any) => {
+    () => async (appContext: AppContextType | any) => {
         const ctx = appContext.ctx;
         let appProps: any = {};
-        if (appContext.ctx.req) {
+
+        if (ctx.req) {
             // This Line will trigger component level getInitialProps
+            appProps = await App.getInitialProps(appContext);
+        } else {
             appProps = await App.getInitialProps(appContext);
         }
 

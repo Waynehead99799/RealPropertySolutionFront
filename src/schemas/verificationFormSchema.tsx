@@ -10,14 +10,14 @@ export interface VerificationFormInputs {
 export const VerificationFormValidateSchema = Yup.object({
     hcNo: Yup.string()
         .trim()
-        .required("Health Card Number is a required field")
+        .required("Card Number is a required field")
         .matches(
             /^\s*\S[\s\S]*$/,
-            "Health Card Number cannot contain only blankspaces",
+            "Card Number cannot contain only blankspaces",
         )
         .matches(
             /^(\+\d{1,2}\s)?\(?\d{4}\)?[\s.-]\d{3}[\s.-]\d{3}$/,
-            "Invalid Health Card Number number, must be 10 digits",
+            "Invalid Card Number number, must be 10 digits",
         ),
     dob: Yup.string()
         .required("Date of birth is a required field")

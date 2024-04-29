@@ -1,39 +1,45 @@
 import React from "react";
 import PropertyDetailSchema from "./propertyDetailSchema";
 import { MainLayoutComponent } from "@components/layout/mainLayout/mainLayoutComponent";
-import { wrapper } from "@redux/store";
 import { getPropertyDetails } from "@redux/services/dashboard.api";
 
 export const PropertyDetailContainer = ({ propertyData }: any) => {
-    return propertyData ? (
-        <PropertyDetailSchema propertyData={propertyData} />
-    ) : null;
+    return propertyData && <PropertyDetailSchema propertyData={propertyData} />;
 };
 
-PropertyDetailContainer.Layout = MainLayoutComponent;
+PropertyDetailContainer.getInitialProps = async (ctx: any) => {
+    let propertyData;
+    const { res } = ctx;
+    try {
+        if (ctx?.query?.id) {
+            const resData = await getPropertyDetails({
+                id: ctx?.query?.id,
+            });
+            if (resData && resData.statusCode === 200) {
+                propertyData = resData.result;
+            }
+        }
+    } catch (e) {
+        console.log(e);
+    }
+
+    if (!propertyData) {
+        if (res) {
+            res.statusCode = 404;
+        }
+        return {
+            statusCode: 404,
+        };
+    }
+
+    return { propertyData };
+};
 
 PropertyDetailContainer.MetaData = {
     title: "Property Detail",
     description: "Property Detail",
 };
 
-PropertyDetailContainer.getInitialProps = wrapper.getInitialPageProps(
-    () => async (ctx: any) => {
-        let propertyData = {};
-        try {
-            if (ctx?.query?.id) {
-                const res = await getPropertyDetails({
-                    id: ctx?.query?.id,
-                });
-                if (res && res.statusCode === 200) {
-                    propertyData = res.result;
-                }
-            }
-        } catch (e) {
-            console.log(e);
-        }
-        return { propertyData };
-    },
-);
+PropertyDetailContainer.Layout = MainLayoutComponent;
 
 export default PropertyDetailContainer;

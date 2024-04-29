@@ -17,7 +17,7 @@ const ErrorComponent = (props: ErrorComponentProps) => {
     return (
         <>
             <Head>
-                <title>404 Page Not Found | Sparrow Health</title>
+                <title>404 Page Not Found | Real Property Solutions</title>
             </Head>
             <div
                 className={`box-border m-auto lg:w-2/3 py-12 lg:px-56 h-auto rounded-lg mx-auto my-28 ${errorStyles.container}`}
