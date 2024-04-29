@@ -14,3 +14,11 @@ export const getPropertyDetails = async ({ id }: any): Promise<any> => {
         method: "GET",
     });
 };
+
+export const getPropertySearch = async ({ queryParams }: any): Promise<any> => {
+    return fetch({
+        url: `/properties/search`,
+        method: "POST",
+        params: queryParams,
+    });
+};

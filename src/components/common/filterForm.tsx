@@ -1,15 +1,21 @@
-import { FilterOutlined } from "@ant-design/icons";
+import { FilterOutlined, LoadingOutlined } from "@ant-design/icons";
 import {
     FormGroup,
     InputField,
     SelectField,
 } from "@components/theme/form/formFieldsComponent";
-import { Button } from "antd";
+import { Button, Slider } from "antd";
 import React from "react";
-import { useForm } from "react-hook-form";
-import { LOCATIONS } from "src/libs/constants";
+import { Controller, useForm } from "react-hook-form";
+import {
+    DEFAULT_MAX_VALUE,
+    DEFAULT_MIN_VALUE,
+    LOCATIONS,
+    MAX_VALUE,
+    MIN_VALUE,
+} from "src/libs/constants";
 
-export const FilterForm = ({ onSubmit }: any) => {
+export const FilterForm = ({ onSubmit, isLoading }: any) => {
     const { register, handleSubmit, formState, control } = useForm<any>({});
 
     return (
@@ -17,7 +23,7 @@ export const FilterForm = ({ onSubmit }: any) => {
             <div className="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-5 md:pt-8 md:pb-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:px-12 md:-mt-[100px] -mt-[80px] backdrop-blur-[30px]">
                 <form onSubmit={handleSubmit(onSubmit)} className="text-left">
                     <div className="flex flex-wrap">
-                        <FormGroup className="mb-4 flex-grow md:mr-2">
+                        <FormGroup className="mb-4 flex-grow md:mr-2 w-1/4">
                             <InputField
                                 {...{
                                     register,
@@ -28,7 +34,7 @@ export const FilterForm = ({ onSubmit }: any) => {
                                 }}
                             />
                         </FormGroup>
-                        <FormGroup className="mb-4 flex-grow md:mr-2">
+                        <FormGroup className="mb-4 flex-grow md:mr-2 w-1/4">
                             <SelectField
                                 {...{
                                     register,
@@ -42,15 +48,24 @@ export const FilterForm = ({ onSubmit }: any) => {
                             />
                         </FormGroup>
                         <FormGroup className="mb-4 flex-grow md:mr-2">
-                            <InputField
-                                {...{
-                                    register,
-                                    formState,
-                                    type: "number",
-                                    className: "h-[38px]",
-                                    id: "price",
-                                    placeholder: "Property Price",
-                                }}
+                            <Controller
+                                name="range"
+                                control={control}
+                                defaultValue={[
+                                    DEFAULT_MIN_VALUE,
+                                    DEFAULT_MAX_VALUE,
+                                ]} // Initial range values
+                                render={({ field }) => (
+                                    <Slider
+                                        range
+                                        min={MIN_VALUE}
+                                        max={MAX_VALUE}
+                                        value={field.value}
+                                        onChange={(value) =>
+                                            field.onChange(value)
+                                        }
+                                    />
+                                )}
                             />
                         </FormGroup>
                         <Button
@@ -60,10 +75,17 @@ export const FilterForm = ({ onSubmit }: any) => {
                             loading={false}
                             disabled={formState?.isSubmitting}
                         >
-                            <FilterOutlined
-                                onPointerEnterCapture={undefined}
-                                onPointerLeaveCapture={undefined}
-                            />
+                            {isLoading.isFilter ? (
+                                <LoadingOutlined
+                                    onPointerEnterCapture={undefined}
+                                    onPointerLeaveCapture={undefined}
+                                />
+                            ) : (
+                                <FilterOutlined
+                                    onPointerEnterCapture={undefined}
+                                    onPointerLeaveCapture={undefined}
+                                />
+                            )}
                         </Button>
                     </div>
                 </form>

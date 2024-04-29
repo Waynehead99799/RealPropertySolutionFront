@@ -7,7 +7,7 @@ export const BannerSection = ({ title }: any) => {
                 <div className="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-fixed bg-[hsla(0,0%,0%,0.75)]">
                     <div className="flex h-full items-center justify-center">
                         <div className="px-6 text-center text-white md:px-12">
-                            <h1 className="mt-2 mb-6 text-2xl font-semibold md:text-6xl xl:text-7xl text-white">
+                            <h1 className="mt-2 mb-6 capitalize text-2xl font-semibold md:text-6xl xl:text-7xl text-white">
                                 {title}
                             </h1>
                         </div>

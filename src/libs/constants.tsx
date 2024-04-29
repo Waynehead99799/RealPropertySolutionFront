@@ -153,14 +153,24 @@ export const GALLERY = [
 export const LOCATIONS = [
     {
         label: "Gandhinagar",
-        value: "gn",
+        value: "gandhinagar",
     },
     {
         label: "Surat",
-        value: "su",
+        value: "surat",
     },
     {
         label: "Mansha",
-        value: "ms",
+        value: "mansha",
+    },
+    {
+        label: "Ahmedabad",
+        value: "ahmedabad",
     },
 ];
+
+export const MIN_VALUE = 10000;
+export const MAX_VALUE = 10000000;
+
+export const DEFAULT_MIN_VALUE = 1000000;
+export const DEFAULT_MAX_VALUE = 5000000;
