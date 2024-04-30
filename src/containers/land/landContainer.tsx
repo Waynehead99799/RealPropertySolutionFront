@@ -59,8 +59,16 @@ export const LandContainer = (props: LandContainerProps) => {
             });
             if (resData && resData.statusCode === 200) {
                 setPropertyListData(resData.result);
+                setIsLoading({
+                    isFilter: false,
+                    isLoadMore: false,
+                });
             }
         } catch (error) {
+            setIsLoading({
+                isFilter: false,
+                isLoadMore: false,
+            });
             console.log(error);
         }
     };
