@@ -49,12 +49,12 @@ const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
                                 <Swiper
                                     loop={true}
                                     spaceBetween={5}
-                                    navigation={true}
+                                    navigation={false}
                                     autoplay={{
                                         delay: 2500,
                                         disableOnInteraction: false,
                                     }}
-                                    // eslint-disable-next-line prettier/prettier
+                                    /* eslint-disable */
                                     thumbs={{
                                         swiper:
                                             thumbsSwiper &&
@@ -62,6 +62,7 @@ const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
                                                 ? thumbsSwiper
                                                 : null,
                                     }}
+                                    /* eslint-disable */
                                     modules={[
                                         Autoplay,
                                         FreeMode,
@@ -69,6 +70,7 @@ const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
                                         Thumbs,
                                     ]}
                                     className="mySwiper2"
+                                    style={{ height: "560px" }}
                                 >
                                     {property.images.map(
                                         (i: string, index: number) => (
@@ -96,6 +98,7 @@ const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
                                         Thumbs,
                                     ]}
                                     className="mySwiper"
+                                    style={{ height: "95px" }}
                                 >
                                     {property?.images.map(
                                         (i: string, index: number) => (
