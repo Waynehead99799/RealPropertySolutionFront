@@ -11,6 +11,7 @@ import {
     DEFAULT_MAX_VALUE,
     DEFAULT_MIN_VALUE,
     LOCATIONS,
+    MARKS,
     MAX_VALUE,
     MIN_VALUE,
 } from "src/libs/constants";
@@ -20,10 +21,10 @@ export const FilterForm = ({ onSubmit, isLoading }: any) => {
 
     return (
         <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-5 md:mb-20 mb-10">
-            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-6 py-5 md:pt-8 md:pb-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:px-12 md:-mt-[100px] -mt-[80px] backdrop-blur-[30px]">
+            <div className="block rounded-lg bg-[hsla(0,0%,100%,0.7)] px-4 py-5 md:pt-8 md:pb-5 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] md:px-12 md:-mt-[100px] -mt-[80px] backdrop-blur-[30px]">
                 <form onSubmit={handleSubmit(onSubmit)} className="text-left">
                     <div className="flex flex-wrap">
-                        <FormGroup className="mb-4 flex-grow md:mr-2 w-1/4">
+                        <FormGroup className="mb-4 md:mb-0 flex-grow md:mr-2 md:w-1/4 w-full">
                             <InputField
                                 {...{
                                     register,
@@ -34,7 +35,7 @@ export const FilterForm = ({ onSubmit, isLoading }: any) => {
                                 }}
                             />
                         </FormGroup>
-                        <FormGroup className="mb-4 flex-grow md:mr-2 w-1/4">
+                        <FormGroup className="mb-4 md:mb-0 flex-grow md:mr-2 md:w-1/4 w-full">
                             <SelectField
                                 {...{
                                     register,
@@ -47,7 +48,7 @@ export const FilterForm = ({ onSubmit, isLoading }: any) => {
                                 }}
                             />
                         </FormGroup>
-                        <FormGroup className="mb-4 flex-grow md:mr-2">
+                        <FormGroup className="mb-0 flex-grow md:mr-2 md:w-2/5">
                             <Controller
                                 name="range"
                                 control={control}
@@ -64,6 +65,12 @@ export const FilterForm = ({ onSubmit, isLoading }: any) => {
                                         onChange={(value) =>
                                             field.onChange(value)
                                         }
+                                        {...{
+                                            railStyle: {
+                                                backgroundColor: "lightblue",
+                                            },
+                                        }}
+                                        marks={MARKS}
                                     />
                                 )}
                             />

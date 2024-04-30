@@ -27,10 +27,6 @@ export const Header = () => {
             url: "/residential",
         },
         {
-            label: "Locations",
-            url: "/locations",
-        },
-        {
             label: "About",
             url: "/about",
         },

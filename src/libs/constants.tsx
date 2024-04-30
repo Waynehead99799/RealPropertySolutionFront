@@ -174,3 +174,22 @@ export const MAX_VALUE = 10000000;
 
 export const DEFAULT_MIN_VALUE = 1000000;
 export const DEFAULT_MAX_VALUE = 5000000;
+
+export const MARKS = {
+    10000: {
+        style: {
+            fontSize: "10px",
+            fontWeight: 600,
+            transform: " translateX(-5%)",
+        },
+        label: 10000,
+    },
+    10000000: {
+        style: {
+            fontSize: "10px",
+            fontWeight: 600,
+            transform: "translateX(-95%)",
+        },
+        label: 10000000,
+    },
+};
