@@ -134,50 +134,58 @@ const PropertyDetailSchema = (props: PropertyDetailSchemaProps) => {
                         </p>
 
                         <div className="flex items-center justify-around py-4 border-t border-b mt-5 border-b-grey-500 border-t-grey-500">
-                            <div>
-                                <BedsIcon className="w-[48px] h-[48px]" />
-                                <p className="grid text-center mt-1">
-                                    <span className=" text-lg font-semibold">
-                                        Beds
-                                    </span>
-                                    <span className="text-base font-medium">
-                                        {property?.detail?.bed ?? "N/A"}
-                                    </span>
-                                </p>
-                            </div>
-                            <div>
-                                <BathIcon className="w-[48px] h-[48px]" />
-                                <p className="grid text-center mt-1">
-                                    <span className=" text-lg font-semibold">
-                                        Baths
-                                    </span>
-                                    <span className="text-base font-medium">
-                                        {property?.detail?.bath ?? "N/A"}
-                                    </span>
-                                </p>
-                            </div>
-                            <div>
-                                <LevelsIcon className="w-[48px] h-[48px]" />
-                                <p className="grid text-center mt-1">
-                                    <span className=" text-lg font-semibold">
-                                        Levels
-                                    </span>
-                                    <span className="text-base font-medium">
-                                        {property?.detail?.levels ?? "N/A"}
-                                    </span>
-                                </p>
-                            </div>
-                            <div>
-                                <SqtIcon className="w-[48px] h-[48px]" />
-                                <p className="grid text-center mt-1">
-                                    <span className=" text-lg font-semibold">
-                                        Sqft
-                                    </span>
-                                    <span className="text-base font-medium">
-                                        {property?.detail?.sqft ?? "N/A"}
-                                    </span>
-                                </p>
-                            </div>
+                            {property?.detail?.bed && (
+                                <div>
+                                    <BedsIcon className="w-[48px] h-[48px]" />
+                                    <p className="grid text-center mt-1">
+                                        <span className=" text-lg font-semibold">
+                                            Beds
+                                        </span>
+                                        <span className="text-base font-medium">
+                                            {property?.detail?.bed ?? "N/A"}
+                                        </span>
+                                    </p>
+                                </div>
+                            )}
+                            {property?.detail?.bath && (
+                                <div>
+                                    <BathIcon className="w-[48px] h-[48px]" />
+                                    <p className="grid text-center mt-1">
+                                        <span className=" text-lg font-semibold">
+                                            Baths
+                                        </span>
+                                        <span className="text-base font-medium">
+                                            {property?.detail?.bath ?? "N/A"}
+                                        </span>
+                                    </p>
+                                </div>
+                            )}
+                            {property?.detail?.levels && (
+                                <div>
+                                    <LevelsIcon className="w-[48px] h-[48px]" />
+                                    <p className="grid text-center mt-1">
+                                        <span className=" text-lg font-semibold">
+                                            Levels
+                                        </span>
+                                        <span className="text-base font-medium">
+                                            {property?.detail?.levels ?? "N/A"}
+                                        </span>
+                                    </p>
+                                </div>
+                            )}
+                            {property?.detail?.sqft && (
+                                <div>
+                                    <SqtIcon className="w-[48px] h-[48px]" />
+                                    <p className="grid text-center mt-1">
+                                        <span className=" text-lg font-semibold">
+                                            Sqft
+                                        </span>
+                                        <span className="text-base font-medium">
+                                            {property?.detail?.sqft ?? "N/A"}
+                                        </span>
+                                    </p>
+                                </div>
+                            )}
                         </div>
                         <div className="mt-6">
                             <h3 className="mb-4 text-2xl font-bold">
