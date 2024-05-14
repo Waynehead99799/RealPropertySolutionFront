@@ -100,7 +100,7 @@ export const HomeScene = (props: HomeSceneProps) => {
                     their growth potential and market stability.
                 </p>
                 <div className="grid gap-x-6 lg:grid-cols-3">
-                    <PropertyBox data={propertyData} />
+                    <PropertyBox data={propertyData.properties} />
                 </div>
             </section>
             <section className="container mx-auto px-6 lg:px-10 2xl:px-32 mt-14">
