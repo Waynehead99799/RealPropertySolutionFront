@@ -67,16 +67,16 @@ export const Header = () => {
                             <ul className="flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-3 md:mt-0">
                                 {headerMenu.map((menu) => {
                                     return (
-                                        <li
-                                            key={menu.label}
-                                            className="cursor-pointer hover:bg-primary/[0.18] px-3 py-1 h-fit hover:rounded-md"
-                                        >
-                                            <Link href={menu.url}>
+                                        <Link href={menu.url}>
+                                            <li
+                                                key={menu.label}
+                                                className="cursor-pointer hover:bg-primary/[0.18] px-3 py-1 h-fit hover:rounded-md"
+                                            >
                                                 <span className="font-medium text-base">
                                                     {menu.label}
                                                 </span>
-                                            </Link>
-                                        </li>
+                                            </li>
+                                        </Link>
                                     );
                                 })}
                             </ul>
