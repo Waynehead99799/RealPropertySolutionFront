@@ -40,7 +40,7 @@ const ContactSchema = () => {
                                         Our Location
                                     </h4>
                                     <p className="text-base text-body-color ">
-                                        915, Gala Empire, Opp. Doordarshan
+                                        921, Gala Empire, Opp. Doordarshan
                                         Tower, Nr. Drive In Rd, Thaltej
                                         Ahmadabad.
                                     </p>

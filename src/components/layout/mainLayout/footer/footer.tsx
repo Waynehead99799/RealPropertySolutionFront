@@ -88,7 +88,7 @@ export const Footer = () => {
                         <div className="flex md:items-center justify-center lg:text-sm text-xs font-normal mb-6">
                             <LocationIcon />
                             <span className="ml-2 md:w-auto w-4/5">
-                                915, Gala Empire, Opp. Doordarshan Tower, Nr.
+                                921, Gala Empire, Opp. Doordarshan Tower, Nr.
                                 Drive In Rd, Thaltej Ahmadabad, Gujarat, India
                                 380054
                             </span>
