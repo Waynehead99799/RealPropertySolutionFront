@@ -955,6 +955,8 @@ export const TextAreaField = (props: TextAreaFieldProps) => {
 };
 
 export const SelectField = (props: SelectFieldProps) => {
+    const menuPortalTarget =
+        typeof document !== "undefined" ? document.body : null;
     const {
         formState,
         id,
@@ -1033,6 +1035,13 @@ export const SelectField = (props: SelectFieldProps) => {
                             classNamePrefix={`ant-react-select${
                                 error ? " ant-input-status-error" : ""
                             }`}
+                            menuPortalTarget={menuPortalTarget}
+                            styles={{
+                                menuPortal: (base: any) => ({
+                                    ...base,
+                                    zIndex: 9999,
+                                }),
+                            }}
                         />
                     )}
                 />

@@ -145,12 +145,10 @@ export const Header = () => {
                                             <ul className="">
                                                 {headerMenu.map((menu) => {
                                                     return (
-                                                        <li
-                                                            key={menu.label}
-                                                            className="cursor-pointer hover:bg-primary/[0.18] px-4 py-2 border-b border-black/5"
-                                                        >
-                                                            <Link
-                                                                href={menu.url}
+                                                        <Link href={menu.url}>
+                                                            <li
+                                                                key={menu.label}
+                                                                className="cursor-pointer hover:bg-primary/[0.18] px-4 py-2 border-b border-black/5"
                                                             >
                                                                 <span
                                                                     onClick={() => {
@@ -162,8 +160,8 @@ export const Header = () => {
                                                                 >
                                                                     {menu.label}
                                                                 </span>
-                                                            </Link>
-                                                        </li>
+                                                            </li>
+                                                        </Link>
                                                     );
                                                 })}
                                             </ul>

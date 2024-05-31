@@ -13,7 +13,7 @@ export const PropertyBox = ({ data }: any) => {
                 data.length > 0 &&
                 data.map((d: any, index: number) => (
                     <div
-                        className="mb-5 p-4 bg-white shadow-sm shadow-secondary rounded-lg -z-[1]"
+                        className="mb-5 p-4 bg-white shadow-sm shadow-secondary rounded-lg"
                         key={index}
                     >
                         <div
