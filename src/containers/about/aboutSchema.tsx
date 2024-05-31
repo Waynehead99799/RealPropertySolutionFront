@@ -1,91 +1,12 @@
 import { BannerSection } from "@components/common/bannerSection";
 import { InstagramIcon } from "@components/theme/icons/Instagram";
-import { LinkedInIcon } from "@components/theme/icons/LinkedIn";
 import { TwitterIcon } from "@components/theme/icons/Twitter";
 import { FacebookIcon } from "@components/theme/icons/facebook";
 import { WhatsappIcon } from "@components/theme/icons/whastapp";
 import Link from "next/link";
 import React from "react";
 
-const AboutSchema = () => {
-    const team = [
-        {
-            member_name: "Mehul Galchar",
-            position: "Owner",
-            img: "/images/mehulbhai.jpg",
-            fb_link: "https://www.facebook.com/mehul.galchar.12",
-            insta_link: "https://www.instagram.com/galchar.mehul/",
-            watsp_link: "https://wa.me/919909953645",
-            twit_link: "#",
-        },
-        {
-            member_name: "Ghanshyam Patel",
-            position: "Real Estate Broker",
-            img: "/images/bhaskar.jpeg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/917878827811",
-            twit_link: "#",
-        },
-        {
-            member_name: "Darshak Patel",
-            position: "Real Estate Broker",
-            img: "/images/marta-smith.jpg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/919265189330",
-            twit_link: "#",
-        },
-        {
-            member_name: "Dharmik Aahir",
-            position: "Real Estate Broker",
-            img: "/images/dhamo.jpeg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/919687530231",
-            twit_link: "#",
-        },
-        {
-            member_name: "Chintan Patel",
-            position: "Real Estate Broker",
-            img: "/images/john-doe.jpg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/918460637168",
-            twit_link: "#",
-        },
-        {
-            member_name: "Priyash Desai",
-            position: "Real Estate Broker",
-            img: "/images/priyansh.jpg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/919909915655",
-            twit_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-        },
-        {
-            member_name: "Parth Desai",
-            position: "Real Estate Broker",
-            img: "/images/IMG_9309.jpg",
-            fb_link:
-                "https://www.facebook.com/p/Real-Property-Solution-100054285771240/",
-            insta_link:
-                "https://www.instagram.com/real_property_solution?igsh=ZmFuazl3ajUxam44",
-            watsp_link: "https://wa.me/919909974645",
-            twit_link: "#",
-        },
-    ];
+const AboutSchema = ({ agentData }: any) => {
     return (
         <>
             <BannerSection title="About Us" />
@@ -737,64 +658,68 @@ const AboutSchema = () => {
                     experience exceptional. Experience the difference with our
                     skilled brokers by your side.
                 </p>
-
-                <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 mt-28">
-                    {team.map((t) => (
-                        <div className="mb-28">
-                            <div className="block h-full rounded-lg bg-white-200/75 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div className="flex justify-center">
-                                    <div className="flex justify-center -mt-[75px]">
-                                        <img
-                                            src={t.img}
-                                            className="mx-auto rounded-full shadow-lg dark:shadow-black/20 w-[150px]"
-                                            alt="Avatar"
-                                        />
+                {agentData && agentData.length > 0 && (
+                    <div className="grid gap-x-6 md:grid-cols-3 lg:gap-x-12 mt-28">
+                        {agentData.map((t: any) => (
+                            <div className="mb-28">
+                                <div className="block h-full rounded-lg bg-white-200/75 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+                                    <div className="flex justify-center">
+                                        <div className="flex justify-center -mt-[75px]">
+                                            <img
+                                                src={
+                                                    t?.profileImage ??
+                                                    "/images/profile.png"
+                                                }
+                                                className="mx-auto rounded-full shadow-lg dark:shadow-black/20 w-[150px] h-[150px] object-cover"
+                                                alt="Avatar"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div className="p-6 text-center">
-                                    <h5 className="mb-1 text-lg font-bold">
-                                        {t.member_name}
-                                    </h5>
-                                    {/* <p className="mb-6">{t.position}</p> */}
-                                    <div className="flex items-center justify-center">
-                                        {t.fb_link && (
-                                            <Link
-                                                href={t.fb_link}
-                                                target="_blank"
-                                            >
-                                                <FacebookIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                            </Link>
-                                        )}
-                                        {t.twit_link && (
-                                            <Link
-                                                href={t.twit_link}
-                                                target="_blank"
-                                            >
-                                                <TwitterIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                            </Link>
-                                        )}
-                                        {t.watsp_link && (
-                                            <Link
-                                                href={t.watsp_link}
-                                                target="_blank"
-                                            >
-                                                <WhatsappIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
-                                            </Link>
-                                        )}
-                                        {t.insta_link && (
-                                            <Link
-                                                href={t.insta_link}
-                                                target="_blank"
-                                            >
-                                                <InstagramIcon className="hover:text-primary hover:cursor-pointer" />
-                                            </Link>
-                                        )}
+                                    <div className="p-6 text-center">
+                                        <h5 className="text-lg font-bold capitalize mb-2">
+                                            {t?.name}
+                                        </h5>
+                                        {/* <p className="mb-6">{t.position}</p> */}
+                                        <div className="flex items-center justify-center">
+                                            {t.facebookUrl && (
+                                                <Link
+                                                    href={t.facebookUrl}
+                                                    target="_blank"
+                                                >
+                                                    <FacebookIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                                </Link>
+                                            )}
+                                            {t.twitterUrl && (
+                                                <Link
+                                                    href={t.twitterUrl}
+                                                    target="_blank"
+                                                >
+                                                    <TwitterIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                                </Link>
+                                            )}
+                                            {t.phoneNumber && (
+                                                <Link
+                                                    href={`https://wa.me/${t.phoneNumber}`}
+                                                    target="_blank"
+                                                >
+                                                    <WhatsappIcon className="md:mr-3 mr-2 hover:text-primary hover:cursor-pointer" />
+                                                </Link>
+                                            )}
+                                            {t.instagramUrl && (
+                                                <Link
+                                                    href={t.instagramUrl}
+                                                    target="_blank"
+                                                >
+                                                    <InstagramIcon className="hover:text-primary hover:cursor-pointer" />
+                                                </Link>
+                                            )}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
+                        ))}
+                    </div>
+                )}
             </section>
         </>
     );

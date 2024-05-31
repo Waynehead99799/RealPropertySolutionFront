@@ -15,6 +15,13 @@ export const getPropertyDetails = async ({ id }: any): Promise<any> => {
     });
 };
 
+export const getAgents = async (): Promise<any> => {
+    return fetch({
+        url: `/agent`,
+        method: "GET",
+    });
+};
+
 export const getPropertySearch = async ({ queryParams }: any): Promise<any> => {
     return fetch({
         url: `/properties/search`,
