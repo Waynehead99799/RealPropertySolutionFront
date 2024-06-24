@@ -34,12 +34,12 @@
     }
   ],
   "screenshots": [{
-      "src": "img/icons/mobile-screenshot-360x640.png",
+      "src": "/icons/mobile-screenshot-360x640.png",
       "sizes": "360x640",
       "type": "image/png"
     },
     {
-      "src": "img/icons/wide-screenshot-1920x1080.png",
+      "src": "/icons/wide-screenshot-1920x1080.png",
       "sizes": "1920x1080",
       "type": "image/png",
       "form_factor": "wide"
