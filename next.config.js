@@ -1,76 +1,60 @@
-const withPlugins = require("next-compose-plugins");
-const withLess = require("next-with-less");
-
-const path = require("path");
-const runtimeCaching = require("next-pwa/cache");
-const generateRobotsTxt = require("./scripts/generate-robots-txt");
-
-let nextConfig = {
-    reactStrictMode: true,
-    webpack5: true,
-    sassOptions: {
-        includePaths: [path.join(__dirname, "styles")],
+/** @type {import('next').NextConfig} */
+const securityHeaders = [
+    { key: "X-Content-Type-Options", value: "nosniff" },
+    { key: "X-Frame-Options", value: "SAMEORIGIN" },
+    { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+    {
+        key: "Permissions-Policy",
+        value: "camera=(), microphone=(), geolocation=()",
     },
-    env: {
-        NEXT_ENV: process.env.NEXT_ENV,
-        NEXT_ENDPOINT: process.env.NEXT_ENDPOINT,
-        NEXT_API_ENDPOINT: process.env.NEXT_API_ENDPOINT,
-    },
-    poweredByHeader: false,
-    future: {},
-    images: {
-        domains: ["mdbcdn.b-cdn.net"], // Add your image domains here
-    },
-    webpack(config, { isServer }) {
-        if (isServer) {
-            generateRobotsTxt();
-        }
-        return config;
-    },
-    // async redirects() {
-    //     return [
-    //         {
-    //             source: "/",
-    //             destination: "/login",
-    //             permanent: false,
-    //         },
-    //     ];
-    // },
-};
-
-if (process.env.NEXT_ENV !== "local") {
-    nextConfig.pwa = {
-        dest: "public",
-        runtimeCaching,
-    };
-    const withPWA = require("next-pwa");
-    nextConfig = withPWA(nextConfig);
-}
-
-const plugins = [
-    [
-        withLess,
-        {
-            lessLoaderOptions: {
-                lessOptions: {
-                    modifyVars: {
-                        "primary-color": "#B4131E",
-                        "link-color": "#146EB4",
-                        "success-color": "#6DB324",
-                        "warning-color": "#F26B1D",
-                        "error-color": "#FD6060",
-                        "font-size-base": "14px",
-                        "heading-color": "#000000",
-                        "text-color": "#000000",
-                        "text-color-secondary": "#12263F",
-                        "disabled-color": "#ef5674",
-                        "border-radius-base": "3px",
-                        "border-color-base": "#9ea2a7",
-                    },
-                },
-            },
-        },
-    ],
 ];
 
-module.exports = withPlugins(plugins, nextConfig);
+const nextConfig = {
+    reactStrictMode: true,
+    poweredByHeader: false,
+    compress: true,
+    swcMinify: true,
+    env: {
+        NEXT_ENV: process.env.NEXT_ENV,
+        NEXT_API_ENDPOINT: process.env.NEXT_API_ENDPOINT,
+    },
+    images: {
+        domains: ["res.cloudinary.com"],
+    },
+    async headers() {
+        return [
+            { source: "/:path*", headers: securityHeaders },
+            // Cached for a week (files keep their names, so no "immutable"). Next's own hashed assets are cached forever by Next itself.
+            {
+                source: "/images/:path*",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "public, max-age=604800, stale-while-revalidate=86400",
+                    },
+                ],
+            },
+            {
+                source: "/icons/:path*",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "public, max-age=604800, stale-while-revalidate=86400",
+                    },
+                ],
+            },
+            // The retirement worker must never be cached, or it cannot replace the old one.
+            {
+                source: "/sw.js",
+                headers: [
+                    {
+                        key: "Cache-Control",
+                        value: "no-cache, no-store, must-revalidate",
+                    },
+                ],
+            },
+        ];
+    },
+};
+
+module.exports = nextConfig;

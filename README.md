@@ -1,113 +1,80 @@
-# RealPropertySolutionFront
+# Real Property Solution: website
 
-This project was generated with [superplate](https://github.com/pankod/superplate).
+Front end for realpropertysolution.in, an Ahmedabad property dealer (offices, shops, flats, bungalows, plots).
 
-## Getting Started
+Next.js 12 (pages router), React 18, TypeScript, Tailwind CSS. No UI framework and no client-side state library: pages are statically generated and refreshed in the background (ISR, 60 s), so they are fast and crawlable.
 
-superplate is a Next.js all-in-one project generator. Create your project with the tools you need without spending hours on setting them up.
+## Design system ("hoarding")
 
-## Available Scripts
+The identity borrows from the To-Let / For-Sale hoardings every Indian street has: flat brand-crimson fields, square "board" tags, a ribbon of property types, and crop marks around images.
 
-### Running the development server.
+- Fonts: **Big Shoulders Display** (headlines, prices) and **Hind** (text), self-hosted in `public/fonts` and preloaded from `pages/_document.tsx`. Declared in `src/styles/globals.css`.
+- Palette and type tokens: `tailwind.config.js` (white, concrete grey, ink, brand crimson, navy).
+- Motion (`globals.css`): masked headline rise, crimson sheet that unveils the hero photo, scroll-lit statement text, marquee ribbon, in-view reveals, sticky stacking posters. Transform and opacity only, all disabled under `prefers-reduced-motion`.
+- Functionality added in the redesign: sentence-style search, Gallery/Index portfolio views, shortlist with one-tap "Send shortlist" on WhatsApp, "Ask us" quick questions, listing reference codes (RPS-001), EMI estimator on sale listings, preferred-visit field, Warehouses category.
+
+## Images: no blur, no stock
+
+- `src/lib/properties.ts` reads each Cloudinary photo's real pixel size, drops duplicates and anything under 900px wide from galleries, and every URL is built with `c_limit` / `c_lfill`, so nothing is ever upscaled. Listings without a usable photo show a drawn elevation (`src/components/ui/Art.tsx`) and "Photos on request".
+- Backgrounds and tiles use real aerial photographs of Ahmedabad (new apartment blocks, a warehouse cluster by the highway, plots and farmland, the Sabarmati riverfront) plus the SG Highway skyline, all openly licensed (CC BY-SA 4.0) and credited at `/photo-credits` via `PHOTO_CREDITS` in `src/config/site.ts`. Listings with no photo of their own show the matching aerial, labelled "Area view · site photos on request". `src/lib/photos.ts` maps photos to categories and areas; `scripts/process-aerials.js` and `scripts/process-photos.js` write the responsive WebP sets to `public/photos` and never upscale.
+- These are stand-ins for a proper drone shoot of the client's own projects. Replace any file in `public/photos` with a client drone photo of the same name (and update the credit) and the whole site picks it up.
+- To add real photography: upload the client's original photos to the listing in the admin (Cloudinary). Anything 1600px wide or more will automatically display sharp at every size.
+
+## Run it
 
 ```bash
-    npm run dev
+npm install
+npm run dev      # http://localhost:3003
+npm run build && npm run start
+npm run lint     # eslint + type-check + prettier
 ```
 
-### Building for production.
+Node 25 note: Next 12 uses a bundled `jsonwebtoken` that reads `buffer.SlowBuffer`, which Node 25 removed. The `dev`, `build` and `start` scripts preload `scripts/node-compat.js` to restore it. It is a no-op on older Node versions. Node 18 to 22 is the safest runtime for hosting.
 
-```bash
-    npm run build
-```
+## Environment variables
 
-### Running the production server.
+Copy `.env.example` to `.env.local` for local work. On the host set:
 
-```bash
-    npm run start
-```
+| Variable | Purpose |
+| --- | --- |
+| `NEXT_API_ENDPOINT` | Backend base URL (defaults to the current Vercel backend) |
+| `NEXT_ENV` | Set to `staging` or `local` to keep a site out of Google. Leave unset in production |
+| `NEXT_PUBLIC_SITE_URL` | Canonical origin, default `https://www.realpropertysolution.in` |
+| `NEXT_PUBLIC_GTM_ID` | Google Tag Manager container (optional) |
+| `NEXT_PUBLIC_GA4_ID` | GA4 measurement ID, used only when there is no GTM container |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Meta Pixel, used only when there is no GTM container |
+| `META_PIXEL_ID`, `META_CAPI_TOKEN` | Server-side Conversions API for Lead events (optional) |
 
-## Learn More
+Search engines are blocked automatically on `next dev` and when `NEXT_ENV` is `local` or `staging`. A normal production build is indexable. `robots.txt` and `sitemap.xml` are generated per environment.
 
-To learn more about **superplate**, please check out the [Documentation](https://github.com/pankod/superplate).
+## Where things live
 
-### **TailwindCSS**
+- `src/config/site.ts`: everything the business owns (phone, address, socials, developers, areas, FAQs, landing pages, tracking IDs). Edit content here.
+- `src/lib/properties.ts`: fetches listings from the backend and cleans them (typos, ALL-CAPS, plot reclassified to Land, slugs, price per sq ft).
+- `src/lib/format.ts`: Indian price formatting (₹ Cr / Lakh / per month).
+- `pages/api/lead.ts`: enquiry endpoint (validation, honeypot, rate limit, forwards to the backend mailer, optional Meta Conversions API).
+- `src/components/`: `layout` (header, footer, ask widget, shortlist drawer), `home`, `property` (card, poster, portfolio index, gallery, EMI), `forms`, `seo`, `ui` (marquee, word reveal, art, icons).
+- `pages/lp/[slug].tsx`: ad landing pages, configured in `LANDING_PAGES`.
 
-A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+URLs: `/`, `/properties`, `/commercial`, `/warehouse`, `/residential`, `/land`, `/<category>/<listing-slug>`, `/areas/<area>`, `/lp/<campaign>`, `/about`, `/contact`, `/thank-you`. Old `/property-detail/<id>` links redirect permanently to the new slug.
 
-[Go To Documentation](https://tailwindcss.com/docs)
+## Tracking
 
-### **SASS/SCSS**
+Nothing loads until an ID is configured and the visitor accepts the cookie notice. Events: `PageView`, `ViewContent` (listing opens), `Search`, `Lead` (form success, with a shared `event_id` for de-duplication), `Contact` (call or WhatsApp tap). UTM and click IDs are stored on first visit and sent with every lead.
 
-Sass is a stylesheet language that’s compiled to CSS. It allows you to use variables, nested rules, mixins, functions, and more, all with a fully CSS-compatible syntax.
+## Content the client still needs to confirm
 
-[Go To Documentation](https://sass-lang.com/documentation)
+These are intentionally empty or hidden until a verified value is supplied in `src/config/site.ts`:
 
-### **Fetch**
+- RERA registration number (`rera`)
+- Office hours (`hours`)
+- Domain email such as info@realpropertysolution.in (`email`, currently the Gmail already shown on the old Contact page)
+- Genuine, consented client reviews (`testimonials`, section stays hidden while empty)
+- Figures the client can defend (`stats.yearsInBusiness`, `stats.dealsClosed`)
+- Google Business Profile review link (`googleReviewUrl`)
+- Permission to name the developers listed in `developers` (taken from the client's own Instagram highlights)
+- Real photos: each listing, the Thaltej office, and a half-day Ahmedabad shoot. Listings without photos show a "Site photos on request" placeholder, never stock imagery.
 
-Next.js has a built-in polyfill for the fetch API. You don&#39;t need to worry about using it on either server or client side.
+## Backend data to fix in the admin
 
-[Go To Documentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-
-### **Axios**
-
-Promise based HTTP client for the browser and node.js.
-
-[Go To Documentation](https://github.com/axios/axios)
-
-### **SVGR**
-
-Transform SVGs into React components.
-
-[Go To Documentation](https://react-svgr.com/docs/getting-started/)
-
-### **Environment Variables**
-
-Use environment variables in your next.js project for server side, client or both.
-
-[Go To Documentation](https://github.com/vercel/next.js/tree/canary/examples/environment-variables)
-
-### **Bundle Analyzer**
-
-Use webpack-bundle-analyzer in your Next.js project. Visualize size of webpack output files with an interactive zoomable treemap.
-
-[Go To Documentation](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)
-
-### **React Redux**
-
-Redux helps you write applications that behave consistently, run in different environments (client, server, and native), and are easy to test.
-
-[Go To Documentation](https://redux.js.org/introduction/getting-started)
-
-### **ESLint**
-
-A pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript. Maintain your code quality with ease.
-
-[Go To Documentation](https://eslint.org/docs/user-guide/getting-started)
-
-### **Prettier**
-
-An opinionated code formatter; Supports many languages; Integrates with most editors.
-
-[Go To Documentation](https://prettier.io/docs/en/index.html)
-
-### **lint-staged**
-
-The concept of lint-staged is to run configured linter (or other) tasks on files that are staged in git.
-
-[Go To Documentation](https://github.com/okonet/lint-staged)
-
-### **Docker**
-
-Docker simplifies and accelerates your workflow, while giving developers the freedom to innovate with their choice of tools, application stacks, and deployment environments for each project.
-
-[Go To Documentation](https://www.docker.com/get-started)
-
-### **Github Actions**
-
-GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub.
-
-[Go To Documentation](https://docs.github.com/en/actions)
-
-## License
-
-MIT
+The site cleans these on display, but the source records should be corrected: listing "Residential Land / Plot in Ahmedabad" is filed as Residential with area "isckon / ambli road" while its address is Rethal, Sanand; the plot has amenities such as "Swimming pool"; every office lists "Garden"; agent roles are "Admin" / "Agent".

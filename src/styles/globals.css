@@ -1,0 +1,663 @@
+/* Fonts: self-hosted, Latin subset, swap. Preloaded from _document. */
+@font-face {
+    font-family: "Big Shoulders Display";
+    font-style: normal;
+    font-weight: 800;
+    font-display: swap;
+    src: url("/fonts/big-shoulders-display-latin-800-normal.woff2")
+        format("woff2");
+}
+@font-face {
+    font-family: "Big Shoulders Display";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("/fonts/big-shoulders-display-latin-900-normal.woff2")
+        format("woff2");
+}
+@font-face {
+    font-family: "Hind";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("/fonts/hind-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Hind";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("/fonts/hind-latin-500-normal.woff2") format("woff2");
+}
+@font-face {
+    font-family: "Hind";
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url("/fonts/hind-latin-600-normal.woff2") format("woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --ink: #111214;
+    --crimson: #b4131e;
+    --header-h: 72px;
+}
+
+@layer base {
+    html {
+        -webkit-text-size-adjust: 100%;
+        scroll-behavior: smooth;
+        scroll-padding-top: calc(var(--header-h) + 16px);
+    }
+    body {
+        @apply bg-white font-sans text-[17px] leading-[1.6] text-slate-600 antialiased;
+        text-rendering: optimizeLegibility;
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+        @apply text-ink;
+    }
+    h1,
+    h2 {
+        @apply font-display font-extrabold uppercase;
+        line-height: 0.92;
+        letter-spacing: 0.002em;
+    }
+    h3,
+    h4 {
+        @apply font-sans font-semibold;
+    }
+    img {
+        @apply max-w-full;
+    }
+    :focus-visible {
+        outline: 3px solid var(--crimson);
+        outline-offset: 3px;
+    }
+    ::selection {
+        background: var(--crimson);
+        color: #fff;
+    }
+    @media (prefers-reduced-motion: reduce) {
+        html {
+            scroll-behavior: auto;
+        }
+    }
+}
+
+@layer components {
+    .shell {
+        @apply mx-auto w-full max-w-shell px-5 sm:px-8 lg:px-12;
+    }
+    .section {
+        @apply py-16 md:py-24 lg:py-28;
+    }
+
+    /* Type */
+    .display {
+        @apply font-display font-extrabold uppercase text-ink;
+        line-height: 0.9;
+        letter-spacing: 0.002em;
+    }
+    .display-xl {
+        font-size: clamp(3.4rem, 8.8vw, 9.6rem);
+    }
+    .display-lg {
+        font-size: clamp(2.8rem, 7vw, 6.5rem);
+    }
+    .display-md {
+        font-size: clamp(2.2rem, 4.6vw, 4.2rem);
+    }
+    .lede {
+        @apply max-w-prose text-[18px] leading-[1.65] text-slate-600 md:text-[19px];
+    }
+    .tnum {
+        font-variant-numeric: tabular-nums lining-nums;
+    }
+
+    /* The board: tag lettering borrowed from To-Let and For-Sale hoardings */
+    .board {
+        @apply inline-flex items-center bg-crimson px-2.5 py-[5px] font-display text-[15px] font-extrabold uppercase leading-none text-white;
+        letter-spacing: 0.08em;
+    }
+    .board-navy {
+        @apply bg-navy;
+    }
+    .board-ink {
+        @apply bg-ink;
+    }
+    .board-light {
+        @apply bg-white text-ink;
+    }
+
+    /* Crop marks: registration ticks at the corners of a plan or print */
+    .crop {
+        position: relative;
+        --cm: var(--ink);
+    }
+    .crop::after {
+        content: "";
+        position: absolute;
+        inset: -9px;
+        pointer-events: none;
+        background: linear-gradient(var(--cm), var(--cm)) top left/16px 2px
+                no-repeat,
+            linear-gradient(var(--cm), var(--cm)) top left/2px 16px no-repeat,
+            linear-gradient(var(--cm), var(--cm)) top right/16px 2px no-repeat,
+            linear-gradient(var(--cm), var(--cm)) top right/2px 16px no-repeat,
+            linear-gradient(var(--cm), var(--cm)) bottom left/16px 2px no-repeat,
+            linear-gradient(var(--cm), var(--cm)) bottom left/2px 16px no-repeat,
+            linear-gradient(var(--cm), var(--cm)) bottom right/16px 2px
+                no-repeat,
+            linear-gradient(var(--cm), var(--cm)) bottom right/2px 16px
+                no-repeat;
+    }
+
+    /* Buttons: square, heavy, one press feedback */
+    .btn {
+        @apply inline-flex min-h-[48px] items-center justify-center gap-2.5 px-6 py-3 font-display text-[19px] font-extrabold uppercase leading-none transition-[background-color,color,transform,box-shadow] duration-200 ease-out;
+        letter-spacing: 0.06em;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .btn:active {
+        transform: scale(0.98);
+    }
+    .btn-primary {
+        @apply bg-crimson text-white hover:bg-crimson-dark;
+    }
+    .btn-dark {
+        @apply bg-ink text-white hover:bg-ink-700;
+    }
+    .btn-white {
+        @apply bg-white text-ink hover:bg-concrete;
+    }
+    .btn-outline {
+        @apply border-2 border-ink bg-transparent text-ink hover:bg-ink hover:text-white;
+    }
+    .btn-outline-light {
+        @apply border-2 border-white bg-transparent text-white hover:bg-white hover:text-ink;
+    }
+    .btn-whatsapp {
+        @apply bg-whatsapp text-white hover:bg-whatsapp-dark;
+    }
+    .btn-lg {
+        @apply min-h-[58px] px-8 text-[22px];
+    }
+    .btn-sm {
+        @apply min-h-[42px] px-4 text-[16px];
+    }
+
+    .link-quiet {
+        @apply underline decoration-concrete-300 decoration-2 underline-offset-4 transition-colors hover:decoration-crimson;
+    }
+
+    /* Forms */
+    .field-label {
+        @apply mb-1.5 block text-[14px] font-semibold text-ink;
+    }
+    .field {
+        @apply block min-h-[52px] w-full border-2 border-concrete-300 bg-white px-3.5 text-[16px] text-ink placeholder:text-slate-400 transition-[border-color,box-shadow] duration-150 ease-out;
+        border-radius: 0;
+    }
+    .field:hover {
+        @apply border-concrete-400;
+    }
+    .field:focus {
+        outline: none;
+        @apply border-ink;
+        box-shadow: 4px 4px 0 var(--crimson);
+    }
+    .field[aria-invalid="true"] {
+        @apply border-danger;
+        box-shadow: 4px 4px 0 rgba(192, 38, 47, 0.25);
+    }
+    textarea.field {
+        @apply min-h-[120px] py-3;
+    }
+    select.field {
+        @apply appearance-none pr-10;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23111214' stroke-width='2.5' stroke-linecap='square'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+    }
+    .field-error {
+        @apply mt-1.5 text-[14px] font-semibold text-danger;
+    }
+}
+
+@layer components {
+    input[type="range"] {
+        @apply h-2 w-full cursor-pointer appearance-none bg-concrete-200;
+        accent-color: #b4131e;
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        @apply h-6 w-6 appearance-none border-2 border-ink bg-crimson;
+        border-radius: 0;
+    }
+    input[type="range"]::-moz-range-thumb {
+        @apply h-6 w-6 border-2 border-ink bg-crimson;
+        border-radius: 0;
+    }
+}
+
+@layer utilities {
+    .no-scrollbar {
+        scrollbar-width: none;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .safe-bottom {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* ---------- Motion ----------
+   transform + opacity only, <= 900ms for one-off reveals, one easing curve,
+   all of it neutralised under prefers-reduced-motion. */
+
+@keyframes line-up {
+    from {
+        transform: translate3d(0, 108%, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes unveil {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -101%, 0);
+    }
+}
+@keyframes settle {
+    from {
+        transform: scale(1.12);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+@keyframes drift {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.07);
+    }
+}
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 24px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes pop-in {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes sheet-in {
+    from {
+        transform: translate3d(100%, 0, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes drop-in {
+    from {
+        transform: translate3d(0, -100%, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+@keyframes marquee {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-50%, 0, 0);
+    }
+}
+@keyframes draw {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+@keyframes pulse-soft {
+    0%,
+    100% {
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+@keyframes ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.7);
+        opacity: 0;
+    }
+}
+
+/* Headline lines rise out of a mask */
+.line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+    margin-bottom: -0.06em;
+}
+.line > span {
+    display: block;
+    transform: translate3d(0, 108%, 0);
+    animation: line-up 800ms var(--ease) forwards;
+    animation-delay: calc(var(--i, 0) * 90ms + 120ms);
+}
+
+/* A crimson hoarding sheet slides off to reveal the photograph */
+.unveil {
+    overflow: hidden;
+}
+.unveil::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--crimson);
+    transform: translate3d(0, 0, 0);
+    animation: unveil 950ms var(--ease) 350ms forwards;
+    z-index: 2;
+}
+.unveil > img {
+    animation: settle 1500ms var(--ease) 350ms both,
+        drift 28s linear 1900ms forwards;
+}
+
+.rise {
+    animation: rise 700ms var(--ease) both;
+    animation-delay: calc(var(--i, 0) * 90ms);
+}
+.fade-in {
+    animation: fade-in 240ms ease both;
+}
+.pop-in {
+    animation: pop-in 220ms var(--ease) both;
+}
+.sheet-in {
+    animation: sheet-in 360ms var(--ease) both;
+}
+.drop-in {
+    animation: drop-in 420ms var(--ease) both;
+}
+.skeleton {
+    animation: pulse-soft 1.4s ease-in-out infinite;
+    @apply bg-concrete-200;
+}
+.ring {
+    animation: ring 1.8s ease-out 2 both;
+    animation-delay: 1.4s;
+}
+
+/* Hoarding ribbon */
+.marquee {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+}
+.marquee-track {
+    display: flex;
+    flex-shrink: 0;
+    min-width: 200%;
+    animation: marquee 48s linear infinite;
+    will-change: transform;
+}
+.marquee:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Build-line that draws across the process steps */
+.draw-line {
+    transform-origin: left center;
+    transform: scaleX(0);
+}
+.is-in .draw-line,
+.draw-line.is-in {
+    animation: draw 1200ms var(--ease) 200ms forwards;
+}
+
+/* In-view reveal (added by <Reveal/>). Content stays visible without JS. */
+.js .reveal {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+    transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+    transition-delay: calc(var(--d, 0) * 80ms);
+}
+.js .reveal.is-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Image zoom inside an overflow-hidden frame */
+.media-zoom {
+    overflow: hidden;
+}
+.media-zoom img {
+    transition: transform 600ms var(--ease);
+}
+.group:hover .media-zoom img,
+.media-zoom:hover img {
+    transform: scale(1.04);
+}
+
+/* Long-form copy */
+.prose-rps {
+    @apply text-[17px] leading-[1.8] text-slate-600;
+}
+.prose-rps h2 {
+    @apply mb-3 mt-12 text-[40px];
+}
+.prose-rps h3 {
+    @apply mb-2 mt-6 text-lg;
+}
+.prose-rps p {
+    @apply mb-4;
+}
+.prose-rps ul {
+    @apply mb-4 list-disc pl-5;
+}
+.prose-rps a {
+    @apply text-crimson underline underline-offset-4;
+}
+
+/* Scroll-in (see src/lib/scrollfx.ts). Visible without JS. */
+.js [data-fx] {
+    opacity: 0;
+    transition: opacity 700ms var(--ease), transform 800ms var(--ease);
+    transition-delay: calc(var(--d, 0) * 90ms);
+}
+.js [data-fx="up"] {
+    transform: translate3d(0, 30px, 0);
+}
+.js [data-fx="left"] {
+    transform: translate3d(-32px, 0, 0);
+}
+.js [data-fx="zoom"] > img,
+.js [data-fx="zoom"] > svg {
+    transform: scale(1.16);
+    transition: transform 1500ms var(--ease);
+    transition-delay: calc(var(--d, 0) * 90ms);
+}
+.js [data-fx].is-in {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+.js [data-fx="zoom"].is-in > img,
+.js [data-fx="zoom"].is-in > svg {
+    transform: scale(1);
+}
+/* hover zoom on tiles still works after the in-view settle */
+.group:hover [data-fx="zoom"].is-in > img {
+    transform: scale(1.05);
+    transition-duration: 900ms;
+}
+
+/* Press feedback for cards and rows (touch has no hover). */
+.tap {
+    transition: transform 160ms var(--ease);
+    -webkit-tap-highlight-color: transparent;
+}
+.tap:active {
+    transform: scale(0.985);
+}
+
+/* Mobile bar slides up once the page has settled. */
+@keyframes bar-in {
+    from {
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+    }
+}
+.bar-in {
+    animation: bar-in 520ms var(--ease) 700ms both;
+}
+
+/* Page-banner shade: even on phones (text spans the full width), left-to-right on wider screens. */
+.banner-shade {
+    background: linear-gradient(
+        180deg,
+        rgba(17, 18, 20, 0.5) 0%,
+        rgba(17, 18, 20, 0.76) 100%
+    );
+}
+@media (min-width: 768px) {
+    .banner-shade {
+        background: linear-gradient(
+            90deg,
+            rgba(17, 18, 20, 0.84) 0%,
+            rgba(17, 18, 20, 0.58) 45%,
+            rgba(17, 18, 20, 0.08) 100%
+        );
+    }
+}
+/* In banners the layout only shows where there is no headline: low on phones, right on wide screens. */
+.plotlayout--banner {
+    -webkit-mask-image: linear-gradient(180deg, transparent 48%, #000 70%);
+    mask-image: linear-gradient(180deg, transparent 48%, #000 70%);
+}
+@media (min-width: 768px) {
+    .plotlayout--banner {
+        -webkit-mask-image: linear-gradient(90deg, transparent 38%, #000 72%);
+        mask-image: linear-gradient(90deg, transparent 38%, #000 72%);
+    }
+}
+
+/* Plot layout drawn over the plots photo: each plot fades in one after another. */
+@keyframes plotin {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.plotlayout .plot {
+    animation: plotin 600ms ease-out both;
+    animation-delay: calc(var(--i, 0) * 70ms + 250ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .plotlayout .plot,
+    .bar-in {
+        animation: none;
+    }
+    .js [data-fx],
+    .js [data-fx="zoom"] > img,
+    .js [data-fx="zoom"] > svg {
+        transform: none;
+        transition: opacity 200ms ease;
+    }
+    .tap:active {
+        transform: none;
+    }
+    .line > span {
+        transform: none;
+        animation: fade-in 200ms ease forwards;
+        animation-delay: 0ms;
+    }
+    .unveil::after {
+        animation: none;
+        display: none;
+    }
+    .unveil > img,
+    .marquee-track,
+    .skeleton,
+    .ring {
+        animation: none;
+    }
+    .marquee {
+        overflow-x: auto;
+    }
+    .rise,
+    .pop-in,
+    .sheet-in,
+    .drop-in {
+        animation: fade-in 200ms ease both;
+        animation-delay: 0ms;
+    }
+    .draw-line {
+        transform: none;
+    }
+    .draw-line.is-in,
+    .is-in .draw-line {
+        animation: none;
+    }
+    .js .reveal {
+        transform: none;
+        transition: opacity 200ms ease;
+    }
+    .media-zoom img,
+    .group:hover .media-zoom img,
+    .media-zoom:hover img {
+        transform: none;
+        transition: none;
+    }
+    .btn:active {
+        transform: none;
+    }
+}
